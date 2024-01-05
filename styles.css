@@ -1,0 +1,44 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.row {
+  display: flex;
+}
+
+.circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-left: 7%;
+  margin-right: 7%;
+  margin-top: 20%;
+  margin-bottom: 20%;
+  cursor: pointer;
+}
+
+#blue {
+  background-color: blue;
+}
+
+#red {
+  background-color: red;
+}
+
+#black {
+  background-color: black;
+}
+
+#yellow {
+  background-color: yellow;
+}
+
+#resultsBox {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+}
