@@ -1,174 +1,178 @@
-// Arrays to store the state of each circle
-let blueA = [];
-let redA = [];
-let blackA = [];
-let yellowA = [];
+document.addEventListener('DOMContentLoaded', function () {
+    const leftBox = document.getElementById('left');
+    const rightBox = document.getElementById('right');
+    const nextButton = document.getElementById('nextButton');
+    //const questionElement = document.getElementById('question');
+    const specialImage = document.getElementById('1');
+    const endTimeButton = document.getElementById('endButton');
+    //const timerElement = document.getElementById('timer');
 
-//const validIndices = [20,21,22,33,34,50,51,56,58,69,70,74,75,78,79,115,120,121,126,127,137,138,141,142,143,152,153,165,166,177,178,193,194,204,205,218,219,220,228,229,230,231,232,233,234,269,270,271,275,276,277,285,286,289,290,293,294,301,302,303,312,313,327,328,329,339,340,341,352,353,354];
 
-// Timer variables
-let startTime;
-let lastUpdateTime = 0;
-let isExperimentRunning = false;
 
-const audioPlayer = document.getElementById('audioPlayer');
+  
+    //const questions = [
+    //  'Question 1: Which image do you prefer?',
+    //  'Question 2: What color stands out the most?',
+      // Add more questions as needed
+    //];
+  
+    let currentQuestionIndex = 0;
+    let timerSeconds = 0; // Add this line
+    let experimentStartTime = Date.now(); // Record the start time when the page loads
+    let elapsedSeconds = 0;
+    const timeAndImageList = [];
+    
+  
+    //function updateQuestion() {
+    //  questionElement.textContent = questions[currentQuestionIndex];
+  
+      // Increment the question index
+    //  currentQuestionIndex++;
+  
+      // Disable the button if there are no more questions
+    //  if (currentQuestionIndex === questions.length) {
+      //  nextButton.disabled = true;
+      //}
+    //}
 
-// Function to update arrays based on the clicked circle
-function updateArrays(circleId) {
-    //blueA.push(circleId === 'blue' ? 1 : 0);
-    //redA.push(circleId === 'red' ? 1 : 0);
-    //blackA.push(circleId === 'black' ? 1 : 0);
-    //yellowA.push(circleId === 'yellow' ? 1 : 0);
+    function updateTimer() {
+      const currentTime = Date.now();
+      elapsedSeconds = Math.floor((currentTime - experimentStartTime) / 1000);
+      console.log('Total elapsed time:', elapsedSeconds, 'seconds');
+      if (elapsedSeconds >= 20) {
+        console.log("Too much")
+        experimentStartTime = currentTime;
+        timeAndImageList.push([0,0,0,0]);
+        resetRightBox();
+        rightBox.appendChild(specialImage)
+        elapsedSeconds = 0;
 
-    const elapsedTime = getElapsedTime();
-    switch(circleId) {
-      case "blue":
-        blueA.push(elapsedTime);
-        break;
-      case "red":
-        redA.push(elapsedTime);
-        break;
-      case "black":
-        blackA.push(elapsedTime);
-        break;
-      case "yellow":
-        yellowA.push(elapsedTime);
-        break;
-
+      }
+    }
+  
+    function resetRightBox() {
+        while (rightBox.firstChild) {
+          leftBox.appendChild(rightBox.firstChild);
+        }
     }
 
+    //function updateTimer() {
+        //timerElement.textContent = `Timer: ${timerSeconds} seconds`; // Update the timer element
+        //timerSeconds++;
+      //}
 
-  }
+      function enlargeImage(selected) {
+    
+        // Enlarge the image by modifying its CSS properties
+        selected.style.transform = 'scale(1.5)'; // You can adjust the scale value
+        selected.style.transition = 'transform 0.3s ease'; // Optional: Add a smooth transition
+        selected.style.zIndex = 1;
+      }
 
-// Function to handle circle clicks
-function handleCircleClick(event) {
-  const clickedCircleId = event.target.id;
-
-  // Update arrays based on the clicked circle
-  if(isExperimentRunning){
-    updateArrays(clickedCircleId);
-  }
-  
-
-  // Log the updated arrays (you can replace this with any other logic)
-  console.log('blueA:', blueA);
-  console.log('redA:', redA);
-  console.log('blackA:', blackA);
-  console.log('yellowA:', yellowA);
-
-}
-
-//function runUpdate() {
-//  if (isExperimentRunning) {
-//        updateArrays('none');
-//      }
-//    }
-
-
-
-// Function to start the timer
-function startTimer() {
-    startTime = new Date().getTime();
-  }
-  
-  // Function to get the elapsed time
-  function getElapsedTime() {
-    const currentTime = new Date().getTime();
-    const elapsedTime = currentTime - startTime;
-    return elapsedTime;
-  }
-
-  function handleStartButtonClick() {
-    if (!isExperimentRunning) {
-      isExperimentRunning = true;
-      startTimer();
+      function resetImageSize(selected) {
+        if (selected) {
+          // Reset the image size to its original state
+          
+          selected.style.transform = 'scale(1)';
+          selected.style.transition = 'transform 0.3s ease'; // Optional: Add a smooth transition
+          selected.style.zIndex = 0;
+        }
+      }
 
       
-      audioPlayer.play();
 
-      var button = document.getElementById("startButton");
-      button.disabled = true;
+    const timerInterval = setInterval(updateTimer, 1000)
+    
+  
+    nextButton.addEventListener('click', function () {
+      experimentStartTime = Date.now();
+      const imageIds = Array.from(rightBox.children).map(img => img.id);
+      timeAndImageList.push([elapsedSeconds, ...imageIds]);
+      console.log(timeAndImageList)
+      resetRightBox();
+      //updateQuestion(); // Add this line if you want to update the question after resetting
+      rightBox.appendChild(specialImage)
+      elapsedSeconds = 0;
+    });
+
+    endTimeButton.addEventListener('click', function () {
+      // Save the final entry
+      const currentTime = Date.now();
+      const imageIds = Array.from(rightBox.children).map(img => img.id);
+      timeAndImageList.push([elapsedSeconds, ...imageIds]);
+  
+      // Convert the data to CSV format
+      const csvData = timeAndImageList.map(row => row.join(',')).join('\n');
+  
+      // Create a Blob containing the CSV data
+      const blob = new Blob([csvData], { type: 'text/csv;charset=utf-8' });
+  
+      // Create a download link
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'experiment_data.csv';
+      document.body.appendChild(a);
+  
+      // Trigger the download
+      a.click();
+  
+      // Remove the download link
+      document.body.removeChild(a);
+  
+      // Close or reload the page
+      window.close(); // Close the current tab or window
+      // Or you can use window.location.reload() to reload the page
+  });
+  
+    const images = document.querySelectorAll('#left img');
+    const allimages = document.querySelectorAll('img');
+  
+    let selected;
+
+    for (const image of allimages) {
+      image.addEventListener("mouseover",function (event) {
+        enlargeImage(event.target);
+      });
+
+      image.addEventListener("mouseout",function (event){
+        resetImageSize(event.target);
+      })
     }
-  }
-
-  function handleAudioEnd() {
-    isExperimentRunning = false;
-    //var result = getCorrectAnswers(redA, validIndices);
-    //document.getElementById('resultsBox').innerText = 'Nombre de réponses correctes: ' + result;
-    exportToCSV();
-  }
-
-  function exportToCSV() {
-     //Combine arrays into a single array of arrays
-    const data = [blueA, redA, blackA, yellowA];
-
-     //Create a CSV content string
-    //const csvContent = data.map(row => row.join(',')).join('\n');
-    const csvContent = data.map(row => row.map(cell => cell.toFixed(2)).join(',')).join('\n');
-
-    // Create a Blob containing the CSV data
-    const blob = new Blob([csvContent], { type: 'text/csv' });
-
-    // Create a download link and trigger the download
-    const link = document.createElement('a');
-    link.href = window.URL.createObjectURL(blob);
-    link.download = 'experiment_data.csv';
-    link.click();
-  }
-
-  //function getCorrectAnswers(redA, validIndices) {
-    // Find the indices of '1' in array X
-    //var indicesOfOnes = [];
-    //for (var i = 0; i < redA.length; i++) {
-      //if (redA[i] === 1) {
-        //indicesOfOnes.push(i);
-      //}
-    //}
   
-    //var validIndicesOfOnes = indicesOfOnes.filter(function(index) {
-      //return validIndices.includes(index);
-    //});
+    for (const image of images) {
+      image.addEventListener("mouseover",function (event) {
+        enlargeImage(event.target);
+      });
+
+      image.addEventListener("mouseout",function (event){
+        resetImageSize(event.target);
+      })
+
+
+      image.addEventListener("dragstart", function (event) {
+        selected = event.target;
   
-    // Compare the two arrays and count correct answers
-    //var correct_ans = 0;
-    //var smallerArray = validIndicesOfOnes.length <= indicesOfOnes.length ? validIndicesOfOnes : indicesOfOnes;
-    //for (var j = 0; j < smallerArray.length; j++) {
-      //if (indicesOfOnes.includes(validIndicesOfOnes[j])) {
-        //correct_ans++;
-      //}
-    //}
+        rightBox.addEventListener("dragover", function (event) {
+          event.preventDefault();
+        });
   
-    //return correct_ans;
-  //}
-
-  //function askForName() {
-    //const userName = window.prompt("Dans ce test, vous devez cliquer sur le cercle rouge lorsque vous entendez le mot 'rouge'. NE cliquez PAS sur les autres cercles même si vous entendez leurs couleurs");
-    
-    
-    //if (userName) {
-    //    alert('Bonjour, ' + userName + '!'); // Display a greeting with the entered name
-    //} else {
-    //    alert('Vous n\'avez pas entré de nom.'); // Inform the user that no name was entered
-    //}
-//}
-
-//askForName();
-
-  // Start the timer when the page loads
-
-  window.alert("Dans ce test, vous devez cliquer sur le cercle rouge lorsque vous entendez le mot 'rouge'. NE cliquez PAS sur les autres cercles même si vous entendez leurs couleurs.");
+        rightBox.addEventListener("drop", function (event) {
+          if (rightBox.childElementCount < 4) {
+            rightBox.appendChild(selected);
+          }
+          selected = null;
+        });
   
-  document.getElementById('blue').addEventListener('click', handleCircleClick);
+        leftBox.addEventListener("dragover", function (event) {
+          event.preventDefault();
+        });
   
-  document.getElementById('red').addEventListener('click', handleCircleClick);
+        leftBox.addEventListener("drop", function (event) {
+          leftBox.appendChild(selected);
+          selected = null;
+        });
+      });
+    }
+  });
   
-  document.getElementById('black').addEventListener('click', handleCircleClick);
-  
-  document.getElementById('yellow').addEventListener('click',handleCircleClick);
-
-  document.getElementById('startButton').addEventListener('click', handleStartButtonClick);
-
-  audioPlayer.addEventListener('ended', handleAudioEnd);
-
-// Log elapsed time every second
-//setInterval(runUpdate, 500);
