@@ -172,7 +172,9 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
 
-    for (const image of allImages) {
+    // For Mobile Phones
+
+    for (const image of allimages) {
       image.addEventListener('touchstart', function (event) {
           event.preventDefault();
           handleLongTouch(event.target);
@@ -183,6 +185,29 @@ document.addEventListener('DOMContentLoaded', function () {
           handleTouchEnd(event.target);
       });
   }
+
+  for (const image of images) {
+    image.addEventListener("touchstart", function (event) {
+        event.preventDefault(); 
+        selected = event.target;
+        rightBox.addEventListener("touchmove", function (event) {
+            event.preventDefault();
+        });
+        rightBox.addEventListener("touchend", function (event) {
+            if (rightBox.childElementCount < 4) {
+                rightBox.appendChild(selected);
+            }
+            selected = null;
+        });
+        leftBox.addEventListener("touchmove", function (event) {
+            event.preventDefault();
+        });
+        leftBox.addEventListener("touchend", function (event) {
+            leftBox.appendChild(selected);
+            selected = null;
+        });
+    });
+}
 
     //for (const image of images) {
       //image.addEventListener("touchstart", function (event) {
