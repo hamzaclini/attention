@@ -38,9 +38,9 @@ document.addEventListener('DOMContentLoaded', function () {
     function updateTimer() {
       const currentTime = Date.now();
       elapsedSeconds = Math.floor((currentTime - experimentStartTime) / 1000);
-      console.log('Total elapsed time:', elapsedSeconds, 'seconds');
-      if (elapsedSeconds >= 20) {
-        console.log("Too much")
+      //console.log('Total elapsed time:', elapsedSeconds, 'seconds');
+      if (elapsedSeconds >= 300) {
+        //console.log("Too much")
         experimentStartTime = currentTime;
         timeAndImageList.push([0,0,0,0]);
         resetRightBox();
@@ -63,23 +63,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
       function enlargeImage(selected) {
     
-        // Enlarge the image by modifying its CSS properties
-        selected.style.transform = 'scale(1.5)'; // You can adjust the scale value
-        selected.style.transition = 'transform 0.3s ease'; // Optional: Add a smooth transition
         selected.style.zIndex = 1;
+        selected.style.transform = 'scale(1.5)'; // Adjustable
+        selected.style.transition = 'transform 0.3s ease'; // Smooth transition
+        //console.log([selected.id,selected.style.zIndex])
       }
 
       function resetImageSize(selected) {
         if (selected) {
           // Reset the image size to its original state
-          
-          selected.style.transform = 'scale(1)';
-          selected.style.transition = 'transform 0.3s ease'; // Optional: Add a smooth transition
           selected.style.zIndex = 0;
+          selected.style.transform = 'scale(1)';
+          selected.style.transition = 'transform 0.3s ease'; // Smooth transition
+          //console.log([selected.id,selected.style.zIndex])
         }
       }
 
-      
+      // Functions for Mobile Phones:
+      let longTouchTimeout;
+
+      function handleLongTouch(image) {
+        clearTimeout(longTouchTimeout);
+        longTouchTimeout = setTimeout(function () {
+            enlargeImage(image);
+        }, 500);
+      }
+
+      function handleTouchEnd(image) {
+        clearTimeout(longTouchTimeout);
+        resetImageSize(image);
+    }
 
     const timerInterval = setInterval(updateTimer, 1000)
     
@@ -88,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
       experimentStartTime = Date.now();
       const imageIds = Array.from(rightBox.children).map(img => img.id);
       timeAndImageList.push([elapsedSeconds, ...imageIds]);
-      console.log(timeAndImageList)
+      //console.log(timeAndImageList)
       resetRightBox();
       //updateQuestion(); // Add this line if you want to update the question after resetting
       rightBox.appendChild(specialImage)
@@ -96,33 +109,26 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     endTimeButton.addEventListener('click', function () {
-      // Save the final entry
+
       const currentTime = Date.now();
       const imageIds = Array.from(rightBox.children).map(img => img.id);
       timeAndImageList.push([elapsedSeconds, ...imageIds]);
   
-      // Convert the data to CSV format
       const csvData = timeAndImageList.map(row => row.join(',')).join('\n');
   
-      // Create a Blob containing the CSV data
       const blob = new Blob([csvData], { type: 'text/csv;charset=utf-8' });
   
-      // Create a download link
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
       a.download = 'experiment_data.csv';
       document.body.appendChild(a);
   
-      // Trigger the download
       a.click();
   
-      // Remove the download link
       document.body.removeChild(a);
   
-      // Close or reload the page
-      window.close(); // Close the current tab or window
-      // Or you can use window.location.reload() to reload the page
+      window.close(); 
   });
   
     const images = document.querySelectorAll('#left img');
@@ -141,15 +147,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   
     for (const image of images) {
-      image.addEventListener("mouseover",function (event) {
-        enlargeImage(event.target);
-      });
-
-      image.addEventListener("mouseout",function (event){
-        resetImageSize(event.target);
-      })
-
-
       image.addEventListener("dragstart", function (event) {
         selected = event.target;
   
@@ -174,5 +171,25 @@ document.addEventListener('DOMContentLoaded', function () {
         });
       });
     }
+
+    for (const image of allImages) {
+      image.addEventListener('touchstart', function (event) {
+          event.preventDefault();
+          handleLongTouch(event.target);
+      });
+  
+      image.addEventListener('touchend', function (event) {
+          event.preventDefault();
+          handleTouchEnd(event.target);
+      });
+  }
+
+    //for (const image of images) {
+      //image.addEventListener("touchstart", function (event) {
+        //selected = event.target;
+        //console.log(selected)
+      //});
+    //}
+      
   });
   
