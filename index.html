@@ -1,73 +1,36 @@
 <!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Image Survey</title>
-  </head>
-  <body>
-    <div id="surveyContainer">
-      <h2>Choisissez les deux enfants qui ont l'air de ressentir la même chose:</h2>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Timeline with Colored Markers</title>
+</head>
+<body>
+  <div id="timeline-container">
+    <div id="playhead"></div>
+    <div id="marker-container"></div>
+  </div>
 
-      <div class="image-row" id="imageRow1">
-        <div class="image-container" id="img1" onclick="highlightImage(this)">
-          <img src="Images/1.png" alt="Image 1" />
-        </div>
-        <div class="image-container" id="img2" onclick="highlightImage(this)">
-          <img src="Images/2.png" alt="Image 2" />
-        </div>
-        <div class="image-container" id="img3" onclick="highlightImage(this)">
-          <img src="Images/3.png" alt="Image 3" />
-        </div>
-      </div>
+  <div id="timeline-container2">
+    <div id="playhead2"></div>
+    <div id="marker-container2"></div>
+  </div>
+  
+  <div id="controls">
+    <button id="playBtn">Play</button>
+    <button id="stopBtn">Stop</button>
+  </div>
 
-      <div class="image-row" id="imageRow2" style="display: none;">
-        <div class="image-container" id="img4" onclick="highlightImage(this)">
-          <img src="Images/4.png" alt="Image 4" />
-        </div>
-        <div class="image-container" id="img5" onclick="highlightImage(this)">
-          <img src="Images/5.png" alt="Image 5" />
-        </div>
-        <div class="image-container" id="img6" onclick="highlightImage(this)">
-          <img src="Images/6.png" alt="Image 6" />
-        </div>
-      </div>
+  <div id="colors">
+    <button id="Red">Rouge</button>
+    <button id="Blue">Bleu</button>
+    <button id="Black">Noir</button>
+    <button id="Yellow">Jaune</button>
+  </div>
 
-      <div class="image-row" id="imageRow3" style="display: none;">
-        <div class="image-container" id="img7" onclick="highlightImage(this)">
-          <img src="Images/7.png" alt="Image 7" />
-        </div>
-        <div class="image-container" id="img8" onclick="highlightImage(this)">
-          <img src="Images/8.png" alt="Image 8" />
-        </div>
-        <div class="image-container" id="img9" onclick="highlightImage(this)">
-          <img src="Images/9.png" alt="Image 9" />
-        </div>
-      </div>
+  <audio id="audio" src="track2.mp3"></audio>
 
-      <div class="image-row" id="imageRow4" style="display: none;">
-        <div class="image-container" id="img10" onclick="highlightImage(this)">
-          <img src="Images/10.png" alt="Image 10" />
-        </div>
-        <div class="image-container" id="img11" onclick="highlightImage(this)">
-          <img src="Images/11.png" alt="Image 11" />
-        </div>
-        <div class="image-container" id="img12" onclick="highlightImage(this)">
-          <img src="Images/12.png" alt="Image 12" />
-        </div>
-      </div>
-      
-
-      <!-- Next Button -->
-      <button id="backButton" onclick="showPrevRow()" style="display: none;">Back</button>
-      <button id="nextButton" onclick="showNextRow()">Next</button>
-      
-    </div>
-
-
-    
-
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
 </html>
