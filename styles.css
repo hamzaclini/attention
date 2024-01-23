@@ -1,46 +1,36 @@
 body {
   font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.image-row {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
-  margin: 0;
-}
-
-#timeline-container, #timeline-container2 {
-  position: relative;
-  width: 500px; /* Adjust the width as needed */
-  height: 30px;
-  background-color: #eee;
-  border-radius: 10px;
-  overflow: hidden;
   margin-bottom: 20px;
+  margin-left: 25%;
+  margin-right: 20%;
 }
 
-#playhead, #playhead2 {
-  position: absolute;
-  width: 2px;
-  height: 30px;
-  background-color: #000000;
-  /*border-radius: 50%;*/
+.image-container {
+  /*margin-right: 10px;*/
+  margin-left: 3%;
+  margin-right: 3%;
+  display: inline-block;
+  text-align: center;
+  /*margin: 10px;*/
   cursor: pointer;
 }
 
-#marker-container {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-.marker {
-  position: absolute;
-  width: 2px; /* Adjust the width of the marker as needed */
-  background-color: red; /* Adjust the color of the marker */
-  height: 100%;
-}
-
-#colors {
+#nextButton {
   margin-top: 20px;
+}
+
+
+.highlighted {
+  border-bottom: 10px solid red; /* Adjust the border style as needed */
 }

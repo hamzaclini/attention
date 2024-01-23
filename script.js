@@ -1,105 +1,103 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const timelineContainer = document.getElementById('timeline-container');
-  const timelineContainer2 = document.getElementById('timeline-container2');
-  const playhead = document.getElementById('playhead');
-  const playhead2 = document.getElementById('playhead2');
-  const markerContainer = document.getElementById('marker-container');
-  const markerContainer2 = document.getElementById('marker-container2');
-  const playBtn = document.getElementById('playBtn');
-  const stopBtn = document.getElementById('stopBtn');
-  const redBtn = document.getElementById('Red');
-  const blkBtn = document.getElementById('Black');
-  const yelBtn = document.getElementById('Yellow');
-  const bluBtn = document.getElementById('Blue');
-  const audio = document.getElementById('audio');
-  
-  let isPlaying = false;
-  let currentTime = 0;
-  let intervalId;
+  var selectedImages = [];
+  var selectedIds = [];
+  var responses = [];
+  var currentRowIndex = 1; // Initial row index
+  //var currentRow = document.getElementById('imageRow' + currentRowIndex);
 
-  // Set the timeline length based on audio duration
-  audio.addEventListener('loadedmetadata', function() {
-    timelineContainer.style.width = `${audio.duration*10}px`;
-    console.log(audio.duration);
-    createMarkers();
-  });
+  function getSelectedImageIds() {
+    var selectedIds = selectedImages.map(function(image) {
+      return image.id;
+    });
+    return selectedIds
+  }
 
-  audio.addEventListener('loadedmetadata', function() {
-    timelineContainer2.style.width = `${audio.duration*10}px`;
-    console.log(audio.duration);
-  });
+  function highlightImage(container) {
+    // Toggle the 'highlighted' class on the clicked image container
+    container.classList.toggle('highlighted');
 
-  playBtn.addEventListener('click', startTimeline);
-  stopBtn.addEventListener('click', stopTimeline);
-  redBtn.addEventListener('click', addRedMarker);
-  yelBtn.addEventListener('click', addYellowMarker);
-  blkBtn.addEventListener('click', addBlackMarker);
-  bluBtn.addEventListener('click', addBlueMarker);
+    // If the container is now highlighted, add it to the selected images; otherwise, remove it
+    if (container.classList.contains('highlighted')) {
+      selectedImages.push(container);
+     
+    } else {
+      selectedImages = selectedImages.filter(function(item) {
+        return item !== container;
+      });
+    }
 
-  function startTimeline() {
-    if (!isPlaying) {
-      isPlaying = true;
-      intervalId = setInterval(updateTimeline, 1); // Adjust interval as needed
-      audio.play();
+    // If more than two images are selected, remove the highlight from the first selected image
+    if (selectedImages.length > 1) {
+      selectedImages[0].classList.remove('highlighted');
+      selectedImages.shift(); // Remove the first selected image from the array
+      
+    }
+    //console.log(selectedImages);
+    selectedIds = getSelectedImageIds(selectedImages);
+    //console.log(selectedIds)
+
+  }
+  // Expose the highlightImage function to the global scope
+  window.highlightImage = highlightImage;
+
+  window.showNextRow = function() {
+    document.getElementById("backButton").style.display = "inline"
+    var currentRow = document.getElementById('imageRow' + currentRowIndex);
+    var currentImgHaut = document.getElementById('imageHaut' + currentRowIndex);
+    var nextRowIndex = currentRowIndex + 1;
+    console.log(selectedIds)
+    responses.push(selectedIds);
+    //selectedImages = [];
+    selectedIds = [];
+    
+    console.log(responses)
+
+    // If there is a next row, toggle the display property
+    if (nextRowIndex <= 5) { // Change 3 to the total number of rows
+      var nextRow = document.getElementById('imageRow' + nextRowIndex);
+      var nextImgHaut = document.getElementById('imageHaut' + nextRowIndex);
+      //var currentRow = document.getElementById('imageRow' + currentRowIndex);
+      currentRow.style.display = 'none';
+      nextRow.style.display = 'flex';
+      currentImgHaut.style.display = 'none';
+      nextImgHaut.style.display = 'block';
+
+      if (nextRowIndex == 5) {
+        document.getElementById('nextButton').innerHTML = "Finish"
+      }
+      
+
+      currentRowIndex = nextRowIndex; 
+    } else {
+      document.getElementById("surveyContainer").style.display = 'none';
     }
   }
 
-  function stopTimeline() {
-    if (isPlaying) {
-      isPlaying = false;
-      clearInterval(intervalId);
-      audio.pause();
-    }
+  window.showPrevRow = function() {
+    selectedImages.forEach(function(image) {
+       image.classList.remove('highlighted');
+     });
+    console.log(selectedImages)
+    document.getElementById('nextButton').innerHTML = "Next"
+    var currentRow = document.getElementById('imageRow' + currentRowIndex);
+    var currentImgHaut = document.getElementById('imageHaut' + currentRowIndex);
+    var prevRowIndex = currentRowIndex - 1;
+    var prevRow = document.getElementById('imageRow' + prevRowIndex);
+    var prevImgHaut = document.getElementById('imageHaut' + prevRowIndex)
+    
+    if (prevRowIndex <  2) {
+      document.getElementById("backButton").style.display = "none";
+    } 
+    responses.pop();
+    selectedImages = [];
+    selectedIds = [];
+    console.log(responses)
+    currentRow.style.display = 'none';
+    prevRow.style.display = 'flex';
+    currentImgHaut.style.display = 'none';
+    prevImgHaut.style.display = 'block';
+    currentRowIndex = prevRowIndex;
+
   }
 
-  function updateTimeline() {
-    currentTime = audio.currentTime;
-    playhead.style.left = `${(currentTime / audio.duration) * 100}%`;
-    playhead2.style.left = `${(currentTime / audio.duration) * 100}%`;
-  }
-
-  function createMarkers() {
-    const RmarkerTimes = [11.625, 18, 27.355, 34.31, 61,305, 80.035, 86.49, 121,71, 125.08, 134.215, 146.15]; // Yellow
-    const YmarkerTimes = [19.61, 24.085, 31.605, 53.745, 67.395, 74.19, 88.34, 101.72, 131.535, 143.51, 154.24]; // Red
-    const BmarkerTimes = [14.37, 36.715, 45.265, 51.265, 59.665, 71.035, 83.36, 94.31, 98.465, 107.525, 118.505, 128.315, 140.265, 151.57]; // Blue
-
-
-    RmarkerTimes.forEach(markerTime => {
-      createMarker(markerTime, 'red', markerContainer);
-    });
-
-    YmarkerTimes.forEach(markerTime => {
-      createMarker(markerTime, 'yellow', markerContainer);
-    });
-
-    BmarkerTimes.forEach(markerTime => {
-      createMarker(markerTime, 'blue', markerContainer);
-    });
-  }
-
-  function createMarker(markerTime, color, container) {
-    const marker = document.createElement('div');
-    marker.className = 'marker';
-    marker.style.left = `${(markerTime / audio.duration) * 100}%`;
-    marker.style.backgroundColor = color;
-    container.appendChild(marker);
-  }
-
-  function addRedMarker() {
-    createMarker(audio.currentTime, 'red', markerContainer2);
-  }
-
-  function addBlueMarker() {
-    createMarker(audio.currentTime, 'blue', markerContainer2);
-  }
-
-  function addBlackMarker() {
-    createMarker(audio.currentTime, 'black', markerContainer2);
-  }
-
-  function addYellowMarker() {
-    createMarker(audio.currentTime, 'yellow', markerContainer2);
-  }
-
-  
 });
