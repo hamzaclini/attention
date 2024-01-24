@@ -1,124 +1,51 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Image Survey</title>
-  </head>
-  <body>
-    <div id="surveyContainer">
-      <h2>Choisissez l'enfants qui ressent la même chose que l'enfant en haut:</h2>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Catégorisation</title>
+</head>
+<body>
 
-      <div id = "imageHaut1">
-        <img src="Images/1.png" alt="Image 1" />
-      </div>
-      <div id = "imageHaut2" style="display: none;">
-        <img src="Images/6.png" alt="Image 6" />
-      </div>
-      <div id = "imageHaut3" style="display: none;">
-        <img src="Images/11.png" alt="Image 11" />
-      </div>
-      <div id = "imageHaut4" style="display: none;">
-        <img src="Images/16.png" alt="Image 16" />
-      </div>
-      <div id = "imageHaut5" style="display: none;">
-        <img src="Images/21.png" alt="Image 21" />
-      </div>
+  <!--<div id="question-container">
+    <h2 id="question">Question 1: Which image do you prefer?</h2>
+  </div>-->
 
+  
 
-      <div class="image-row" id="imageRow1">
-        <!--<div class="image-container" id="img1">
-          <img src="Images/1.png" alt="Image 1" />
-        </div>-->
-        <div class="image-container" id="img2" onclick="highlightImage(this)">
-          <img src="Images/2.png" alt="Image 2" />
-        </div>
-        <div class="image-container" id="img3" onclick="highlightImage(this)">
-          <img src="Images/3.png" alt="Image 3" />
-        </div>
-        <div class="image-container" id="img4" onclick="highlightImage(this)">
-          <img src="Images/4.png" alt="Image 4" />
-        </div>
-        <div class="image-container" id="img5" onclick="highlightImage(this)">
-          <img src="Images/5.png" alt="Image 5" />
-        </div>
-      </div>
-
-      <div class="image-row" id="imageRow2" style="display: none;">
-        <div class="image-container" id="img7" onclick="highlightImage(this)">
-          <img src="Images/7.png" alt="Image 7" />
-        </div>
-        <div class="image-container" id="img8" onclick="highlightImage(this)">
-          <img src="Images/8.png" alt="Image 8" />
-        </div>
-        <div class="image-container" id="img9" onclick="highlightImage(this)">
-          <img src="Images/9.png" alt="Image 9" />
-        </div>
-        <div class="image-container" id="img10" onclick="highlightImage(this)">
-          <img src="Images/10.png" alt="Image 10" />
-        </div>
-      </div>
-
-    <div class="image-row" id="imageRow3" style="display: none;">
-      <div class="image-container" id="img12" onclick="highlightImage(this)">
-        <img src="Images/12.png" alt="Image 12" />
-      </div>
-      <div class="image-container" id="img13" onclick="highlightImage(this)">
-        <img src="Images/13.png" alt="Image 13" />
-      </div>
-      <div class="image-container" id="img14" onclick="highlightImage(this)">
-        <img src="Images/14.png" alt="Image 14" />
-      </div>
-      <div class="image-container" id="img15" onclick="highlightImage(this)">
-        <img src="Images/15.png" alt="Image 15" />
-      </div>
+  <div class="container">
+    <div id="left">
+        <!--<div class="list" draggable="true"><img src="Image/1.jpg"></div>
+        <div class="list" draggable="true"><img src="Image/2.jpg"></div>
+        <div class="list" draggable="true"><img src="Image/3.jpg"></div>
+        <div class="list" draggable="true"><img src="Image/4.jpg"></div>-->
+        <img src="Images/2.png" id="2" draggable="true">
+        <img src="Images/3.png" id="3" draggable="true">
+        <img src="Images/4.png" id="4" draggable="true">
+        <img src="Images/5.png" id="5" draggable="true">
+        <img src="Images/6.png" id="6" draggable="true">
+        <img src="Images/7.png" id="7" draggable="true">
+        <img src="Images/8.png" id="8" draggable="true">
     </div>
-
-    <div class="image-row" id="imageRow4" style="display: none;">
-      <div class="image-container" id="img17" onclick="highlightImage(this)">
-        <img src="Images/17.png" alt="Image 17" />
-      </div>
-      <div class="image-container" id="img18" onclick="highlightImage(this)">
-        <img src="Images/18.png" alt="Image 18" />
-      </div>
-      <div class="image-container" id="img19" onclick="highlightImage(this)">
-        <img src="Images/19.png" alt="Image 19" />
-      </div>
-      <div class="image-container" id="img20" onclick="highlightImage(this)">
-        <img src="Images/20.png" alt="Image 20" />
-      </div>
+    <div id="right">
+      <img src="Images/1.png" id="1">
     </div>
+    
+  </div>
+  <div class="container">
+    <button id="nextButton">Suivant</button>
+    <button id="endButton">Fin</button>
+    <div id="timer">Elapsed Time: 0 seconds</div>
 
-    <div class="image-row" id="imageRow5" style="display: none;">
-      <div class="image-container" id="img22" onclick="highlightImage(this)">
-        <img src="Images/22.png" alt="Image 22" />
-      </div>
-      <div class="image-container" id="img23" onclick="highlightImage(this)">
-        <img src="Images/23.png" alt="Image 23" />
-      </div>
-      <div class="image-container" id="img24" onclick="highlightImage(this)">
-        <img src="Images/24.png" alt="Image 24" />
-      </div>
-      <div class="image-container" id="img25" onclick="highlightImage(this)">
-        <img src="Images/25.png" alt="Image 25" />
-      </div>
-    </div>
-
-    <!-- Next Button -->
-      <button id="backButton" onclick="showPrevRow()" style="display: none;">Back</button>
-      <button id="nextButton" onclick="showNextRow()">Next</button>
   </div>
     
     
+ 
+  
 
 
-      
 
-
-
-    
-
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
 </html>
