@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  .point {
+    width: 10px;
+    height: 10px;
+    background-color: blue;
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    bottom: 30px;  /* Adjusted to place above the bottom */
+    left: 30px;   /* Adjusted to place at the left */
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    align-items: center;
+    justify-content: center;
+  }
+  
+
+  
