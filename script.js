@@ -56,7 +56,7 @@ function insertImagesIntoCells(index) {
     var img1src = "Images/1.png";
     var img2src = "Images/2.png";
 
-    setTableCaption("Table " + index);
+    setTableCaption("Table " + (index+1));
 
     // Insert image 1 into cell with ID "cell11"
     if(img1ind[count][index]) {
@@ -208,9 +208,9 @@ function processImages() {
         if (index >= 2) {
             clearInterval(intervalId);
         }
-    }, 1000);
+    }, 5000);
 
-    setTimeout(play, 2 * 1000);
+    setTimeout(play, 2 * 5000);
 }
 
 
