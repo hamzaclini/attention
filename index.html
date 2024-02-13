@@ -1,16 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Interactive Circles</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Divs</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
 </head>
 <body>
 
-  <div id="11" class="point" onclick="modifyPoint(this)"></div>
+    <div id="tableContainer">
+        <table>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-  <script src="script.js"></script>
+
+    
+
+    <div id="empty" style="display: none;"></div>
+    <!--<div id="symbols"></div>-->
+
+    <div class="symbols" id="symContainer" style="display: none;">
+        <img src="Images/1.png" class="symbol1" draggable="true">
+        <img src="Images/2.png" class="symbol2" draggable="true">
+    </div>
+
+    <div id="buttons">
+        <button id="confirm" style="display: none;">Suivant</button>
+    </div>
+
+    <div id="output">
+        <label for="correctCount" id="correctCountLabel"> </label>
+    </div>
+
+    
+
+<script src="script.js"></script>
+
 
 </body>
 </html>
