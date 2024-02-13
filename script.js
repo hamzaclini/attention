@@ -1,33 +1,15 @@
-const symbol1real = [['14'], ['21'], ['43'], ['11'], ['21'], ['15'], ['21'], ['25'], ['41'], ['22'],
-                    ['13','24'], ['15','24'], ['31','42'], [], ['13','24'], ['12', '35'], ['14','31'], ['11','23'], ['13','33'], ['31','43'],
-                    ['14','21','25'], ['14','31'], ['24','35'], ['12','13'], ['21','32'], ['12','13','25'], ['34','45'], ['32'], ['24','25','42'], ['25'],
-                    ['11','24','41'], ['15','25'], ['23','25'], ['23','22','35'], ['12','31','41','33'], ['24','32'], ['13','31','33','44'], ['21','23'], ['12','22','24','33'], ['31','12'],
-                    ['34','44'], ['11','15','31','55'], ['13','34'], ['12','13','24','44'], ['23','32'], ['33','35'], ['15','31'],['11','25','41'], ['11','23','31','35'],['25','32','44'],
-                    ['42','43'], ['12','13','23','25','45'], ['12','23','31','32'], ['15','21','24'], ['22','25','31','45'], ['12','14','32'], ['15','22','23','31'], ['13','41','42'], ['23','34','35','42','45'],['13','31','32','35','43']];
+const symbol1real = [['34'], ['21'], ['22'], ['45'],
+                     [], ['24'], ['23'], ['11']];
 
-const symbol2real = [[], [], [], [], [], [], [], [], [], [],
-                    [], [], [], ['15'], [], [], [], [], [],[],
-                    [], [], [], [], [], [], [], [], [], [],
-                    [], [], [], [], [], [], [], [], [], [],
-                    ['32'], [], [], [], [], [], [],[],[],[],
-                    ['23'], [], [], ['35'], [], ['21'], [], [], [],[]];
+const symbol2real = [[], [], [], [], 
+                     ['35'], [], [], []];
 
-const img1ind = [[[14],[""]], [[21],[""]], [[""],[43]], [[11],[""]], [[""],[21]], [[15],[""]], [[21],[""]], [[""],[25]], [[41],[""]], [[22],[""]],
-                [[13],[24]], [[""],[15,24]], [[31],[42]], [[15],[15]], [[""],[13,24]], [[""],[12,35]], [[14, 31],[""]], [[11, 23],[""]], [[33],[13]], [[31],[43]],
-                [[14],[21,25]], [[14,31],[""]], [[24],[35]], [[13],[21]], [[21,32],[""]], [[25], [12,13]], [[45],[34]], [[""],[32]], [[24,25],[42]], [[25], [""]],
-                [[41],[11,24]], [[""]],[15,25], [[""],[23,25]], [[23],[22,35]], [[31,41,33],[12]], [[32],[24]], [[13,31,33],[44]], [[""],[21,23]], [[33],[12,22,24]], [[12,31],[""]],
-                [[32,34,44],[32]], [[11,15,31],[55]], [[13],[34]], [[44],[12,13,24]], [[23],[32]], [[35],[33]], [[15, 31],[33]], [[11, 41],[25]], [[23],[11,31,35]], [[23],[25,54]],
-                [[23,42,43],[23]], [[12,45],[13,23,25]], [[23,31,32],[12]], [[15, 21, 24, 35],[35]], [[25],[22,31,45]], [[12,14,21,32],[21]], [[15,22],[23,31]], [[41,42],[13]], [[23,42],[34,35,45]], [[13,43,35],[31,32]]];
+const img1ind = [[[34],[""]], [[""],[21]], [[22], [""]], [[""], [45]],
+                 [[35], [35]], [[""],[24]], [[23],[""]], [[""],[11]]];
 
 
-const img2ind = [[[""],[""]], [[""],[""]], [[""],[""]], [[""],[""]], [[""],[""]], [[""],[""]], [[""],[""]], [[""],[""]], [[""],[""]], [[""],[""]],
-                [[""],[""]], [[""],[""]], [[""],[""]], [[""],[""]], [[""],[""]], [[""],[""]], [[""],[""]], [[""],[""]], [[""],[""]], [[""],[""]],
-                [[""],[""]], [[""],[""]], [[""],[""]], [[""],[""]], [[""],[""]], [[""],[""]], [[""],[""]], [[""],[""]], [[""],[""]], [[""],[""]],
-                [[""],[""]], [[""],[""]], [[""],[""]], [[""],[""]], [[""],[""]], [[""],[""]], [[""],[""]], [[""],[""]], [[""],[""]], [[""],[""]],
-                [[""],[""]], [[""],[""]], [[""],[34]], [[""],[15]], [[""],[11]], [[""],[13]], [[12], [""]], [[23],[33]], [[""],[""]], [[""],[13,22]],
-                [[23],[""]], [[14,44],[""]], [[33],[11]], [[""],[44]], [[""],[""]], [[14,23],[""]], [[""],[""]], [[44],[24]], [[""],[""]], [[""],[21,44]],
-                [[""],[21]], [[""],[43]], [[25],[11,44]], [[33], [""]], [[24,32,42],[""]], [[23,43,44],[""]], [[21,23],[14]], [[""],[12,31]], [[35],[""]], [[""],[12,42]],
-                [[""],[43,44]], [[24],[""]], [[22],[45]], [[""],[25]], [[11],[32]], [[""],[33]], [[23],[13]], [[34],[15,24]], [[""],[43]], [[21],[""]]];
+const img2ind = [[[""],[25]], [[11],[""]], [[""],[14]], [[41],[""]],
+                 [[""],[""]], [[23],[23]], [[44],[""]], [[42],[""]]];
 
 
 
@@ -39,7 +21,11 @@ const img2ind = [[[""],[""]], [[""],[""]], [[""],[""]], [[""],[""]], [[""],[""]]
 
 
 let count = 0;
+let count2 = 0;
 let sum = 0;
+let epan = 0;
+let counts = [4, 4]
+let epans = ["1.2", "2.1"]
 
 function assignIdsToCells() {
     var table = document.getElementById("tableContainer").getElementsByTagName("table")[0];
@@ -69,6 +55,8 @@ function insertImagesIntoCells(index) {
     
     var img1src = "Images/1.png";
     var img2src = "Images/2.png";
+
+    setTableCaption("Table " + index);
 
     // Insert image 1 into cell with ID "cell11"
     if(img1ind[count][index]) {
@@ -101,79 +89,81 @@ function insertImagesIntoCells(index) {
     
 }
 
-function play(){
+function setTableCaption(title) {
+    var table = document.querySelector("#tableContainer table");
+    var caption = table.createCaption();
+    caption.textContent = title;
+
+}
+
+function play() {
     document.getElementById("tableContainer").style.display = 'none';
-    document.getElementById("empty").style.display = 'grid';
+    document.getElementById("tableContainer2").style.display = 'table'; // Show the second table container
+    document.getElementById("empty").style.display = 'table'; // Show the second table container
     document.getElementById("symContainer").style.display = 'block';
     document.getElementById("confirm").style.display = 'inline';
+    
     const allImages = document.querySelectorAll('img');
-let selected;
+    let selected;
 
-for (const image of allImages) {
-    image.addEventListener("dragstart", function (event) {
-        selected = event.target;
-    });
-}
-
-
-
-// Get the reference to the "emptyDiv" container
-var emptyDiv = document.getElementById('empty');
-
-
-
-// Dynamically create 4 rows and 5 columns of divs
-for (var i = 0; i < 4; i++) {  // Rows
-    // Create 5 columns in each row
-    for (var j = 0; j < 5; j++) {  // Columns
-        // Calculate the unique ID based on the position
-        //var id = (i * 5) + j + 1;
-        var id = '' + (i+1) + (j+1);
-
-        // Create a new div element
-        var newDiv = document.createElement('div');
-
-        // Set the ID and content of the div
-        //newDiv.id = id.toString();
-        newDiv.id = id
-
-        // Add dragover event listener to allow dropping on the dynamically created div
-        newDiv.addEventListener("dragover", function (event) {
-            event.preventDefault();
+    for (const image of allImages) {
+        image.addEventListener("dragstart", function (event) {
+            selected = event.target;
         });
-
-        // Add drop event listener to handle the drop on the dynamically created div
-        newDiv.addEventListener("drop", function (event) {
-            // Check if the dropped element is an image
-            if (selected && selected.tagName.toLowerCase() === 'img') {
-                if (this.childElementCount === 0) {
-                    // Create a clone of the selected image
-                var clone = selected.cloneNode(true);
-
-                // Make the clone draggable
-                clone.draggable = true;
-
-                // Append the clone to the dropped div
-                this.appendChild(clone);
-                }
-                
-            }
-            selected = null;
-        });
-
-        newDiv.addEventListener("click", function (event) {
-            if(this.childElementCount === 1) {
-                this.removeChild(this.firstChild);
-            }
-        });
-
-        // Append the div to the "emptyDiv" div
-        emptyDiv.appendChild(newDiv);
-
-
-        
     }
-}
+
+    // Get the reference to the "empty" table body
+    var emptyTableBody = document.getElementById('empty');
+
+    // Remove existing table rows
+    emptyTableBody.innerHTML = '';
+
+    // Dynamically create 4 rows and 5 columns of table cells
+    for (var i = 0; i < 4; i++) {  // Rows
+        // Create a new row
+        var newRow = emptyTableBody.insertRow();
+
+        // Create 5 cells in each row
+        for (var j = 0; j < 5; j++) {  // Columns
+            // Calculate the unique ID based on the position
+            var id = '' + (i+1) + (j+1);
+
+            // Insert a new cell in the row
+            var newCell = newRow.insertCell();
+
+            // Set the ID and content of the cell
+            newCell.id = id;
+
+            // Add dragover event listener to allow dropping on the dynamically created cell
+            newCell.addEventListener("dragover", function (event) {
+                event.preventDefault();
+            });
+
+            // Add drop event listener to handle the drop on the dynamically created cell
+            newCell.addEventListener("drop", function (event) {
+                // Check if the dropped element is an image
+                if (selected && selected.tagName.toLowerCase() === 'img') {
+                    if (this.childElementCount === 0) {
+                        // Create a clone of the selected image
+                        var clone = selected.cloneNode(true);
+
+                        // Make the clone draggable
+                        clone.draggable = true;
+
+                        // Append the clone to the dropped cell
+                        this.appendChild(clone);
+                    }
+                }
+                selected = null;
+            });
+
+            newCell.addEventListener("click", function (event) {
+                if (this.childElementCount === 1) {
+                    this.removeChild(this.firstChild);
+                }
+            });
+        }
+    }
 }
 
 function arraysAreEqual(arr1, arr2) {
@@ -218,58 +208,100 @@ function processImages() {
         if (index >= 2) {
             clearInterval(intervalId);
         }
-    }, 5000);
+    }, 1000);
 
-    setTimeout(play, 2 * 5000);
+    setTimeout(play, 2 * 1000);
 }
 
 
 
 // Call the functions after the DOM is loaded
 document.addEventListener("DOMContentLoaded", function() {
-    processImages()
-    
+    document.getElementById("start").addEventListener("click",function() {
+        document.getElementById("title").style.display = 'none';
+        document.getElementById("tableContainer").style.display = 'grid';
+        document.getElementById("start").style.display = 'none';
+        processImages();
+    });
 
+    // Register event listener for the "confirm" button
     document.getElementById("confirm").addEventListener("click", function() {
         var symbol1Ids = [];
         var symbol2Ids = [];
         const label = document.getElementById("correctCountLabel");
-        var divs = document.querySelectorAll("#empty > div");
+        const tableCells = document.querySelectorAll('#emptyTable td');
 
-        divs.forEach(function(div) {
-            // Iterate over the child elements of each div
-            div.childNodes.forEach(function(child) {
-                if (child.nodeType === 1) { // Check if the child is an element node
-                    // Check the class of the child element
-                    if (child.classList.contains("symbol1")) {
-                        symbol1Ids.push(div.id);
+        // Initialize arrays to store ids for different symbols
+        tableCells.forEach(function(cell) {
+        // Iterate over the child elements of each table cell
+            cell.childNodes.forEach(function(child) {
+            if (child.nodeType === 1) { // Check if the child is an element node
+                // Check the class of the child element
+                if (child.classList.contains("symbol1")) {
+                    symbol1Ids.push(cell.id);
                     }
-                    if (child.classList.contains("symbol2")) {
-                        symbol2Ids.push(div.id);
+                if (child.classList.contains("symbol2")) {
+                    symbol2Ids.push(cell.id);
                     }
                 }
             });
         });
+
         console.log(symbol1real[count])
         console.log(symbol1Ids)
         console.log(symbol2real[count])
         console.log(symbol2Ids)
-
         sum = sum + (arraysAreEqual(symbol1real[count], symbol1Ids) && arraysAreEqual(symbol2real[count], symbol2Ids));
         label.textContent = 'Le nombre de réponses correctes est ' + `(${sum})` + ' sur ' + `(${count+1})`;
         count ++;
+        
+
+        
         var emptyDiv = document.getElementById('empty');
 
         // Loop through each child element and remove it
         while (emptyDiv.firstChild) {
             emptyDiv.removeChild(emptyDiv.firstChild);
         }
-        if(count < img1ind.length) {
-            processImages()
+
+        if(count2 < counts[epan]-1) {
+            if(count < img1ind.length) {
+                count2 ++;
+                processImages()
+            } else {
+                document.getElementById("symContainer").style.display = 'none';
+                document.getElementById("confirm").style.display = 'none';
+                document.getElementById("start").style.display = 'none';
+            }
         } else {
             document.getElementById("symContainer").style.display = 'none';
             document.getElementById("confirm").style.display = 'none';
+            document.getElementById("start").style.display = 'inline';
+            document.getElementById("title").innerHTML = "EMPAN " + epans[epan];
+            document.getElementById("title").style.display = 'block';
+            epan ++;
+            count2 = 0;
+
         }
+
+
+
+        // if(count2 == counts[epan]-1) {
+        //     //document.getElementById("confirm").innerHTML = "fin";
+        //     document.getElementById("symContainer").style.display = 'none';
+        //     document.getElementById("confirm").style.display = 'none';
+        //     document.getElementById("start").style.display = 'inline';
+        //     document.getElementById("title").innerHTML = "EMPAN " + epans[epan];
+        //     document.getElementById("title").style.display = 'block';
+        //     epan ++;
+        //     count2 = 0;
+        // } else if(count < img1ind.length) {
+        //     count2 ++;
+        //     processImages()
+        // } else {
+        //     document.getElementById("symContainer").style.display = 'none';
+        //     document.getElementById("confirm").style.display = 'none';
+        // }
         
         
     });

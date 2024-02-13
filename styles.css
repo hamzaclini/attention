@@ -1,24 +1,27 @@
-#empty {
-    display: grid;
-    grid-template-columns: repeat(5, 370px);
-    grid-template-rows: repeat(4, 120px);
-    /*grid-gap: 10px;*/
-    }
+h2 {
+    text-align: center;
+    margin-top: 20%;
+    margin-bottom: 5%;
+}
 
-#empty div {
+#emptyTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#emptyTable td {
     border: 1px solid #000;
     text-align: center;
-    line-height: 120px;
-
+    vertical-align: middle;
     width: 370px;
-    height: 120px;
-    }
+    height: 60px;
+}
 
-#empty div img {
-        max-width: 100%;
-        max-height: 100%;
-        vertical-align: middle;
-    }
+#emptyTable td img {
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: middle;
+}
 
 img {
     width: 70px;

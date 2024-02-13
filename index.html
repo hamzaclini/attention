@@ -9,7 +9,8 @@
 </head>
 <body>
 
-    <div id="tableContainer">
+    <h2 id="title">EMPAN 1.1</h2>
+    <div id="tableContainer" style="display: none;">
         <table>
             <tbody>
                 <tr>
@@ -47,8 +48,11 @@
 
     
 
-    <div id="empty" style="display: none;"></div>
-    <!--<div id="symbols"></div>-->
+    <div id="tableContainer2" style="display: none;">
+        <table id="emptyTable">
+            <tbody id="empty"></tbody>
+        </table>
+    </div>
 
     <div class="symbols" id="symContainer" style="display: none;">
         <img src="Images/1.png" class="symbol1" draggable="true">
@@ -56,6 +60,7 @@
     </div>
 
     <div id="buttons">
+        <button id="start">Commence</button>
         <button id="confirm" style="display: none;">Suivant</button>
     </div>
 
