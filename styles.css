@@ -1,3 +1,33 @@
+.large-image {
+    width: 30%; 
+    height: auto; 
+    margin-top: 3%;
+}
+
+.large-image2 {
+    width: 50%; 
+    height: auto; 
+    margin-top: 3%;
+}
+
+.imageContainer figure {
+    margin: 0 auto;
+}
+
+
+.imageContainer {
+    display: flex; /* Use flexbox to align figures horizontally */
+    
+}
+
+.example {
+    text-align: center; 
+}
+
+h1 {
+    text-align: center;
+}
+
 h2 {
     text-align: center;
     margin-top: 20%;
