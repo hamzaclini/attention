@@ -109,7 +109,7 @@ const img2ind = [[[""],[44]], //1.1
 //const img2ind = [];
 
 let stop = 0;
-const mytime = 5000;
+const mytime = 500;
 let score = [];
 let count = 0;
 let count2 = 0;
@@ -216,7 +216,16 @@ function play() {
         image.addEventListener("dragstart", function (event) {
             selected = event.target;
         });
-    }
+    };
+
+    // For mobile phones
+
+    for (const image of allImages) {
+        image.addEventListener("touchstart", function (event) {
+            selected = event.target;
+            console.log("Hello!")
+        });
+    };
 
     // Get the reference to the "empty" table body
     var emptyTableBody = document.getElementById('empty');
@@ -245,6 +254,10 @@ function play() {
                 event.preventDefault();
             });
 
+            newCell.addEventListener("touchmove", function (event) {
+                event.preventDefault();
+            });
+
             // Add drop event listener to handle the drop on the dynamically created cell
             newCell.addEventListener("drop", function (event) {
                 // Check if the dropped element is an image
@@ -263,11 +276,33 @@ function play() {
                 selected = null;
             });
 
+
+            newCell.addEventListener("touchend", function (event) {
+                // Check if the dropped element is an image
+                if (selected && selected.tagName.toLowerCase() === 'img') {
+                    if (this.childElementCount === 0) {
+                        // Create a clone of the selected image
+                        var clone = selected.cloneNode(true);
+
+                        // Make the clone draggable
+                        clone.draggable = true;
+
+                        // Append the clone to the dropped cell
+                        this.appendChild(clone);
+                    }
+                }
+                selected = null;
+            });
+
+            
+
             newCell.addEventListener("click", function (event) {
                 if (this.childElementCount === 1) {
                     this.removeChild(this.firstChild);
                 }
             });
+
+        
         }
     }
 }
