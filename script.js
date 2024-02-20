@@ -109,7 +109,7 @@ const img2ind = [[[""],[44]], //1.1
 //const img2ind = [];
 
 let stop = 0;
-const mytime = 500;
+const mytime = 5000;
 let score = [];
 let count = 0;
 let count2 = 0;
@@ -224,7 +224,7 @@ function play() {
         image.addEventListener("touchstart", function (event) {
             selected = event.target;
             console.log("Hello!")
-        });
+        },false);
     };
 
     // Get the reference to the "empty" table body
@@ -256,7 +256,8 @@ function play() {
 
             newCell.addEventListener("touchmove", function (event) {
                 event.preventDefault();
-            });
+                console.log("Hi")
+            },false);
 
             // Add drop event listener to handle the drop on the dynamically created cell
             newCell.addEventListener("drop", function (event) {
