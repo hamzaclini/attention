@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function () {
        image.addEventListener('touchend', function (event) {
            event.preventDefault();
            handleTouchEnd(event.target);
-       });
+       },false);
    }
 
    for (const image of images) {
@@ -204,11 +204,11 @@ document.addEventListener('DOMContentLoaded', function () {
          });
          leftBox.addEventListener("touchmove", function (event) {
              event.preventDefault();
-         });
+         },false);
          leftBox.addEventListener("touchend", function (event) {
              leftBox.appendChild(selected);
              selected = null;
-         });
+         },false);
      },false);
  }
 
