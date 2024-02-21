@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/> <!--for the touch-->
+    <title>Dynamic Divs</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+<body>
+    <h1 id="example1">Exemple 1</h1>
+    <h1 id="example2" style="display: none;">Exemple 2</h1>
+
+    <h2 id="title" style="display: none;">EMPAN 1.1</h2>
+    <h2 id="failed" style="display: none;">Perdu</h2>
+    <div id="tableContainer" style="display: none;">
+        <table>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    
+
+    <div id="tableContainer2" style="display: none;">
+        <table id="emptyTable">
+            <tbody id="empty"></tbody>
+        </table>
+    </div>
+
+    <div class="symbols" id="symContainer" style="display: none;">
+        <img src="Images/1.png" class="symbol1" draggable="true">
+        <img src="Images/2.png" class="symbol2" draggable="true">
+    </div>
+
+    <div class="example" id="ex1">
+        <div class="imageContainer">
+            <figure>
+                <img src="./ex1/img1.png" class="large-image2">
+                <figcaption>Image 1</figcaption>
+            </figure>
+            <figure>
+                <img src="./ex1/img2.png" class="large-image2">
+                <figcaption>Image 2</figcaption>
+            </figure>
+        </div>
+        <div>
+            <figure>
+                <img src="./ex1/img3.png" class="large-image">
+                <figcaption>Reponse</figcaption>
+            </figure>
+        </div>  
+    </div>
+
+    <div class="example" id="ex2" style="display: none;">
+        <div class="imageContainer">
+            <figure>
+                <img src="./ex2/img1.png" class="large-image2">
+                <figcaption>Image 1</figcaption>
+            </figure>
+            <figure>
+                <img src="./ex2/img2.png" class="large-image2">
+                <figcaption>Image 2</figcaption>
+            </figure>
+        </div>
+        <div>
+            <figure>
+                <img src="./ex2/img3.png" class="large-image">
+                <figcaption>Reponse</figcaption>
+            </figure>
+        </div>  
+    </div>
+
+    <div id="buttons">
+        <button id="next">Suivant</button>
+        <button id="understood" style="display: none;">J'ai compris</button>
+        <button id="start" style="display: none;">Commence</button>
+        <button id="confirm" style="display: none;">Confirmer</button>
+    </div>
+
+    <div id="output">
+        <label for="correctCount" id="correctCountLabel"> </label>
+    </div>
+
+    
+
+<script src="script.js"></script>
+
+
+</body>
+</html>
