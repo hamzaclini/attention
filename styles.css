@@ -1,88 +1,72 @@
-.large-image {
-    width: 30%; 
-    height: auto; 
-    margin-top: 3%;
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh; /* This makes the container take the full height of the viewport */
 }
 
-.large-image2 {
-    width: 50%; 
-    height: auto; 
-    margin-top: 3%;
+#timer {
+    font-size: 48px; /* Adjust the font size as needed */
+    color: blue;
 }
 
-.imageContainer figure {
-    margin: 0 auto;
+.btnContainer {
+    text-align: center;
+    margin-bottom: 3%;
 }
 
-
-.imageContainer {
-    display: flex; /* Use flexbox to align figures horizontally */
-    
-}
-
-.example {
-    text-align: center; 
-}
-
-h1 {
+.form-container {
     text-align: center;
 }
 
-h2 {
-    text-align: center;
-    margin-top: 20%;
-    margin-bottom: 5%;
+.form-container label {
+    display: block;
+    margin-bottom: 10px;
 }
 
-#emptyTable {
-    width: 100%;
-    border-collapse: collapse;
+.form-container input[type="text"] {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
 }
 
-#emptyTable td {
-    border: 1px solid #000;
-    text-align: center;
-    vertical-align: middle;
-    width: 370px;
-    height: 60px;
+.form-container .input-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-#emptyTable td img {
-    max-width: 100%;
-    max-height: 100%;
-    vertical-align: middle;
+.form-container .input-group input[type="text"] {
+    width: calc(50% - 5px); /* Adjust as needed */
+    margin-right: 5px;
 }
 
-img {
-    width: 70px;
-    height: 70px;
-    margin-left: 2%;
-    margin-right: 2%;
+.disabled-label {
+    pointer-events: none; /* Disable pointer events */
+    color: #888; /* Change text color to indicate it's disabled */
 }
 
-.symbols {
-    margin-top: 10%;
-    text-align: center;
+.disabled-input {
+    pointer-events: none; /* Disable pointer events */
+    opacity: 0.6; /* Optionally reduce opacity to indicate it's disabled */
+}
+
+button {
+    width: 120px; 
+    padding: 8px; 
+    border: 1px solid black; 
+    background-color: #f0f0f0; 
+    margin: 5px; 
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
-}
-th, td {
-    border: 1px solid black;
-    padding: 40px;
-    text-align: center;
-    width: 50px; /* Adjust width as needed */
-    height: 50px; /* Adjust height as needed */
+    border-collapse: separate; /* Separate borders between cells */
+    border-spacing: 2px; /* Spacing between cells */
 }
 
-#buttons {
-    margin-top: 2%;
-    margin-bottom: 2%;
-    text-align: center;
-}
-
-#output {
-    text-align: center;
+td, th {
+    border: 1px solid black; /* Add borders to cells */
+    padding: 8px; /* Add padding for better appearance */
 }
