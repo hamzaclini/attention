@@ -1,56 +1,121 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Trail Test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/> <!--for the touch-->
+    <title>Dynamic Divs</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
 </head>
 <body>
-    <h2 id="title">Partie A</h2>
-    <div class="container">
-        <div id="timer">120 seconds</div>
+    <h1 id="example1">Exemple 1</h1>
+    <h1 id="example2" style="display: none;">Exemple 2</h1>
+
+    <h2 id="title" style="display: none;">EMPAN 1.1</h2>
+    <h2 id="failed" style="display: none;">Perdu</h2>
+    <div id="tableContainer" style="display: none;">
+        <table>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
-    <div class="btnContainer">
-        <button id="start">Commence</button>
+
+    
+
+    <div id="tableContainer2" style="display: none;">
+        <table id="emptyTable">
+            <tbody id="empty"></tbody>
+        </table>
     </div>
 
-    <div class="btnContainer">
-        <button id="pause">Pause</button>
+    <div class="symbols" id="symContainer" style="display: none;">
+        <img src="Images/1.png" class="symbol1" draggable="true">
+        <img src="Images/2.png" class="symbol2" draggable="true">
     </div>
 
-    <div class="container">
-        <div class="form-container">
-            <div class="input-group">
-                <label for="textbox1" class="disabled-label">Erreurs:</label>
-                <input type="text" class="disabled-input" id="textbox1" placeholder="Entrez ici...">
-            </div>
-            <div class="input-group">
-                <label for="textbox2" class="disabled-label">Erreurs corrigées:</label>
-                <input type="text" id="textbox2" class="disabled-input" placeholder="Entrez ici...">
-            </div>
-            <div id = "unique" class="input-group" style="display: none;">
-                <label for="textbox3" class="disabled-label">Erreurs persévératives:</label>
-                <input type="text" id="textbox3" class="disabled-input" placeholder="Entrez ici...">
-            </div>
+    <div class="example" id="ex1">
+        <div class="imageContainer">
+            <figure>
+                <img src="./ex1/img1.png" class="large-image2">
+                <figcaption>Image 1</figcaption>
+            </figure>
+            <figure>
+                <img src="./ex1/img2.png" class="large-image2">
+                <figcaption>Image 2</figcaption>
+            </figure>
         </div>
+        <div>
+            <figure>
+                <img src="./ex1/img3.png" class="large-image">
+                <figcaption>Reponse</figcaption>
+            </figure>
+        </div>  
     </div>
 
-    <div class="btnContainer">
-        <button id="save">Enregistrez</button>
+    <div class="example" id="ex2" style="display: none;">
+        <div class="imageContainer">
+            <figure>
+                <img src="./ex2/img1.png" class="large-image2">
+                <figcaption>Image 1</figcaption>
+            </figure>
+            <figure>
+                <img src="./ex2/img2.png" class="large-image2">
+                <figcaption>Image 2</figcaption>
+            </figure>
+        </div>
+        <div>
+            <figure>
+                <img src="./ex2/img3.png" class="large-image">
+                <figcaption>Reponse</figcaption>
+            </figure>
+        </div>  
     </div>
 
-    <div id="tableContainer"></div>
+    <div id="buttons">
+        <button id="next">Suivant</button>
+        <button id="understood" style="display: none;">J'ai compris</button>
+        <button id="start" style="display: none;">Commence</button>
+        <button id="confirm" style="display: none;">Confirmer</button>
+    </div>
+
+    <div id="output">
+        <label for="correctCount" id="correctCountLabel"> </label>
+    </div>
+
+    
+
+<script src="script.js"></script>
 
 
-
-
-
-
-
-
-
-    <script src="script.js"></script>
 </body>
 </html>
