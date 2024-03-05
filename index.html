@@ -3,119 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/> <!--for the touch-->
-    <title>Dynamic Divs</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-
+    <link rel="stylesheet" href="styles.css">
+    <title>Mots</title>
 </head>
 <body>
-    <h1 id="example1">Exemple 1</h1>
-    <h1 id="example2" style="display: none;">Exemple 2</h1>
-
-    <h2 id="title" style="display: none;">EMPAN 1.1</h2>
-    <h2 id="failed" style="display: none;">Perdu</h2>
-    <div id="tableContainer" style="display: none;">
-        <table>
-            <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-
-    
-
-    <div id="tableContainer2" style="display: none;">
-        <table id="emptyTable">
-            <tbody id="empty"></tbody>
-        </table>
-    </div>
-
-    <div class="symbols" id="symContainer" style="display: none;">
-        <img src="Images/1.png" class="symbol1" draggable="true">
-        <img src="Images/2.png" class="symbol2" draggable="true">
-    </div>
-
-    <div class="example" id="ex1">
-        <div class="imageContainer">
-            <figure>
-                <img src="./ex1/img1.png" class="large-image2">
-                <figcaption>Image 1</figcaption>
-            </figure>
-            <figure>
-                <img src="./ex1/img2.png" class="large-image2">
-                <figcaption>Image 2</figcaption>
-            </figure>
+    <h2 id="title">Rappel 1</h2>
+    <div class="wrapper">
+        <div class="container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Catégorie</th>
+                        <th>Item cible</th>
+                        <th>RL</th>
+                        <th>RI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Félin</td>
+                        <td>Chat</td>
+                        <td>
+                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Fruit</td>
+                        <td>Pomme</td>
+                        <td>
+                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Métier</td>
+                        <td>Médecin</td>
+                        <td>
+                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Véhicule</td>
+                        <td>Bus</td>
+                        <td>
+                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Instrument de musique</td>
+                        <td>Saxophone</td>
+                        <td>
+                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Meuble</td>
+                        <td>Canapé</td>
+                        <td>
+                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Reptile</td>
+                        <td>Lézard</td>
+                        <td>
+                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Partie de corps humain</td>
+                        <td>Jambe</td>
+                        <td>
+                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ustensile de cuisine</td>
+                        <td>Spatule</td>
+                        <td>
+                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Jeu</td>
+                        <td>Echecs</td>
+                        <td>
+                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sport</td>
+                        <td>Football</td>
+                        <td>
+                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Métal</td>
+                        <td>Fer</td>
+                        <td>
+                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Danse</td>
+                        <td>Salsa</td>
+                        <td>
+                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Arbre</td>
+                        <td>Erable</td>
+                        <td>
+                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Fleur</td>
+                        <td>Rose</td>
+                        <td>
+                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Oiseau</td>
+                        <td>Moineau</td>
+                        <td>
+                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Element chimique</td>
+                        <td>Chlore</td>
+                        <td>
+                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Outil de bricolage</td>
+                        <td>Marteau</td>
+                        <td>
+                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Style de musique</td>
+                        <td>Funk</td>
+                        <td>
+                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Pays</td>
+                        <td>Chine</td>
+                        <td>
+                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
+                        </td>
+                        <td>
+                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
+                        </td>
+                    </tr>
+                    <!-- Add more rows with words and checkboxes as needed -->
+                </tbody>
+            </table>
         </div>
         <div>
-            <figure>
-                <img src="./ex1/img3.png" class="large-image">
-                <figcaption>Reponse</figcaption>
-            </figure>
-        </div>  
-    </div>
-
-    <div class="example" id="ex2" style="display: none;">
-        <div class="imageContainer">
-            <figure>
-                <img src="./ex2/img1.png" class="large-image2">
-                <figcaption>Image 1</figcaption>
-            </figure>
-            <figure>
-                <img src="./ex2/img2.png" class="large-image2">
-                <figcaption>Image 2</figcaption>
-            </figure>
+            <button id="start">Commence</button>
+            <button id="save" class="disabledBtn changable">Enregistrez</button>
+            <div id="timer">120 seconds</div>
+            <button id="notRelated" class="disabledBtn changable">+ Intrusion</button>
+            <button id="double" class="disabledBtn changable">+ Doublon</button>
+            <button id="pause" class="disabledBtn changable">Pause</button>
+            <div id="notRelatedT" class="text">0 intrusions</div>
+            <div id="doubleT" class="text">0 doublons</div>
+            
         </div>
-        <div>
-            <figure>
-                <img src="./ex2/img3.png" class="large-image">
-                <figcaption>Reponse</figcaption>
-            </figure>
-        </div>  
+        
     </div>
 
-    <div id="buttons">
-        <button id="next">Suivant</button>
-        <button id="understood" style="display: none;">J'ai compris</button>
-        <button id="start" style="display: none;">Commence</button>
-        <button id="confirm" style="display: none;">Confirmer</button>
-    </div>
-
-    <div id="output">
-        <label for="correctCount" id="correctCountLabel"> </label>
-    </div>
-
+    <div id="tableContainer"></div>
     
 
-<script src="script.js"></script>
-
-
+    <script src="script.js"></script>
 </body>
 </html>
