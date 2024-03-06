@@ -1,246 +1,737 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Mots</title>
-</head>
-<body>
-    <h2 id="title">Rappel 1</h2>
-    <div class="wrapper">
-        <div class="container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Catégorie</th>
-                        <th>Item cible</th>
-                        <th>RL</th>
-                        <th>RI</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Félin</td>
-                        <td>Chat</td>
-                        <td>
-                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
-                        </td>
-                        <td>
-                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Fruit</td>
-                        <td>Pomme</td>
-                        <td>
-                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
-                        </td>
-                        <td>
-                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Métier</td>
-                        <td>Médecin</td>
-                        <td>
-                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
-                        </td>
-                        <td>
-                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Véhicule</td>
-                        <td>Bus</td>
-                        <td>
-                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
-                        </td>
-                        <td>
-                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Instrument de musique</td>
-                        <td>Saxophone</td>
-                        <td>
-                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
-                        </td>
-                        <td>
-                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Meuble</td>
-                        <td>Canapé</td>
-                        <td>
-                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
-                        </td>
-                        <td>
-                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Reptile</td>
-                        <td>Lézard</td>
-                        <td>
-                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
-                        </td>
-                        <td>
-                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Partie de corps humain</td>
-                        <td>Jambe</td>
-                        <td>
-                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
-                        </td>
-                        <td>
-                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Ustensile de cuisine</td>
-                        <td>Spatule</td>
-                        <td>
-                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
-                        </td>
-                        <td>
-                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Jeu</td>
-                        <td>Echecs</td>
-                        <td>
-                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
-                        </td>
-                        <td>
-                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Sport</td>
-                        <td>Football</td>
-                        <td>
-                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
-                        </td>
-                        <td>
-                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Métal</td>
-                        <td>Fer</td>
-                        <td>
-                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
-                        </td>
-                        <td>
-                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Danse</td>
-                        <td>Salsa</td>
-                        <td>
-                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
-                        </td>
-                        <td>
-                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Arbre</td>
-                        <td>Erable</td>
-                        <td>
-                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
-                        </td>
-                        <td>
-                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Fleur</td>
-                        <td>Rose</td>
-                        <td>
-                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
-                        </td>
-                        <td>
-                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Oiseau</td>
-                        <td>Moineau</td>
-                        <td>
-                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
-                        </td>
-                        <td>
-                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Element chimique</td>
-                        <td>Chlore</td>
-                        <td>
-                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
-                        </td>
-                        <td>
-                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Outil de bricolage</td>
-                        <td>Marteau</td>
-                        <td>
-                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
-                        </td>
-                        <td>
-                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Style de musique</td>
-                        <td>Funk</td>
-                        <td>
-                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
-                        </td>
-                        <td>
-                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Pays</td>
-                        <td>Chine</td>
-                        <td>
-                            <input type="checkbox" class="rl-checkbox disabledCheckbox">
-                        </td>
-                        <td>
-                            <input type="checkbox" class="ri-checkbox disabledCheckbox">
-                        </td>
-                    </tr>
-                    <!-- Add more rows with words and checkboxes as needed -->
-                </tbody>
-            </table>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Reconnaissance d'affects</title>
+  </head>
+  <body>
+
+    <h2 style="display: none;">Confusion Matrix Test</h2>
+    <table style="display: none;" id="confusionMatrixTable">
+      <!-- Confusion matrix will be displayed here -->
+    </table>
+
+    <div id="content">
+        <h1 id="first"> Le premier test. </h1>
+        <h1 id="second" style="display: none;"> Le deuxième test. </h1>
+        <h1 id="third" style="display: none;"> Le troisième test. </h1>
+        <h1 id="fourth" style="display: none;"> Le quatrième test. </h1>
+        <h1 id="fifth" style="display: none;"> Le cinquième test. </h1>
+        
+
+        <button id="start">Commence</button>
+
+        
+
+    </div>
+
+
+
+
+    <div id="surveyContainer1" style="display: none;">
+      <h1>Les enfants ont l'air de ressentir la même chose.</h1>
+      <!-- Images and Radio Buttons -->
+      <div class="image-row" id="imageRow11">
+        <div class="image-container">
+          <img src="Images1/001.png" alt="Image 1" />
         </div>
-        <div>
-            <button id="start">Commence</button>
-            <button id="save" class="disabledBtn changable">Enregistrez</button>
-            <div id="timer">120 seconds</div>
-            <button id="notRelated" class="disabledBtn changable">+ Intrusion</button>
-            <button id="double" class="disabledBtn changable">+ Doublon</button>
-            <button id="pause" class="disabledBtn changable">Pause</button>
-            <div id="notRelatedT" class="text">0 intrusions</div>
-            <div id="doubleT" class="text">0 doublons</div>
-            
+        <div class="image-container">
+          <img src="Images1/002.png" alt="Image 2" />
         </div>
+      </div>
+      
+
+      <div class="image-row" id="imageRow12">
+        <div class="image-container">
+          <img src="Images1/003.png" alt="Image 3" />
+        </div>
+        <div class="image-container">
+          <img src="Images1/004.png" alt="Image 4" />
+        </div>
+      </div>
+
+      <div class="image-row" id="imageRow13">
+        <div class="image-container">
+          <img src="Images1/005.png" alt="Image 5" />
+        </div>
+        <div class="image-container">
+          <img src="Images1/006.png" alt="Image 6" />
+        </div>
+      </div>
+
+      <div class="image-row" id="imageRow14">
+        <div class="image-container">
+          <img src="Images1/007.png" alt="Image 7" />
+        </div>
+        <div class="image-container">
+          <img src="Images1/008.png" alt="Image 8" />
+        </div>
+      </div>
+
+      <div class="image-row" id="imageRow15">
+        <div class="image-container">
+          <img src="Images1/009.png" alt="Image 9" />
+        </div>
+        <div class="image-container">
+          <img src="Images1/010.png" alt="Image 10" />
+        </div>
+      </div>
+
+      <div class="image-row" id="imageRow16">
+        <div class="image-container">
+          <img src="Images1/011.png" alt="Image 11" />
+        </div>
+        <div class="image-container">
+          <img src="Images1/012.png" alt="Image 12" />
+        </div>
+      </div>
+
+      <div class="image-row" id="imageRow17">
+        <div class="image-container">
+          <img src="Images1/013.png" alt="Image 13" />
+        </div>
+        <div class="image-container">
+          <img src="Images1/014.png" alt="Image 14" />
+        </div>
+      </div>
+
+      <div class="image-row" id="imageRow18">
+        <div class="image-container">
+          <img src="Images1/015.png" alt="Image 15" />
+        </div>
+        <div class="image-container">
+          <img src="Images1/016.png" alt="Image 16" />
+        </div>
+      </div>
+
+
+
+
+      
+
+      <!-- Next Button -->
+      <div class="reponse-row" id="reponseRow11">
+        <label> <input type="radio" name="response1" value="1" /> Oui </label>
+        <label> <input type="radio" name="response1" value="0" /> Non </label>
+      </div>
+      <div class="reponse-row" id="reponseRow12">
+        <label> <input type="radio" name="response2" value="1" /> Oui </label>
+        <label> <input type="radio" name="response2" value="0" /> Non </label>
+      </div>
+      <div class="reponse-row" id="reponseRow13">
+        <label> <input type="radio" name="response3" value="1" /> Oui </label>
+        <label> <input type="radio" name="response3" value="0" /> Non </label>
+      </div>
+      <div class="reponse-row" id="reponseRow14">
+        <label> <input type="radio" name="response4" value="1" /> Oui </label>
+        <label> <input type="radio" name="response4" value="0" /> Non </label>
+      </div>
+      <div class="reponse-row" id="reponseRow15">
+        <label> <input type="radio" name="response5" value="1" /> Oui </label>
+        <label> <input type="radio" name="response5" value="0" /> Non </label>
+      </div>
+      <div class="reponse-row" id="reponseRow16">
+        <label> <input type="radio" name="response6" value="1" /> Oui </label>
+        <label> <input type="radio" name="response6" value="0" /> Non </label>
+      </div>
+      <div class="reponse-row" id="reponseRow17">
+        <label> <input type="radio" name="response7" value="1" /> Oui </label>
+        <label> <input type="radio" name="response7" value="0" /> Non </label>
+      </div>
+      <div class="reponse-row" id="reponseRow18">
+        <label> <input type="radio" name="response8" value="1" /> Oui </label>
+        <label> <input type="radio" name="response8" value="0" /> Non </label>
+      </div>
+      
+      <button id="backButton1" style="display: none;">Retour</button>
+      <button id="nextButton1">Suivant</button>
+      
+    </div>
+
+
+
+    <div id="surveyContainer2" style="display: none;">
+        <h2>Choisissez les deux enfants qui ont l'air de ressentir la même chose:</h2>
+  
+        <div class="image-row" id="imageRow21">
+          <div class="image-container" onclick="highlightImage(this)">
+            <img class="J" src="Images2/001.png" alt="Image 1" />
+          </div>
+          <div class="image-container" onclick="highlightImage(this)">
+            <img class="J" src="Images2/002.png" alt="Image 2" />
+          </div>
+          <div class="image-container" onclick="highlightImage(this)">
+            <img class="N" src="Images2/003.png" alt="Image 3" />
+          </div>
+        </div>
+  
+        <div class="image-row" id="imageRow22" style="display: none;">
+          <div class="image-container" onclick="highlightImage(this)">
+            <img class="T" src="Images2/004.png" alt="Image 4" />
+          </div>
+          <div class="image-container" onclick="highlightImage(this)">
+            <img class="J" src="Images2/005.png" alt="Image 5" />
+          </div>
+          <div class="image-container" onclick="highlightImage(this)">
+            <img class="T" src="Images2/006.png" alt="Image 6" />
+          </div>
+        </div>
+  
+        <div class="image-row" id="imageRow23" style="display: none;">
+          <div class="image-container" onclick="highlightImage(this)">
+            <img class="T" src="Images2/007.png" alt="Image 7" />
+          </div>
+          <div class="image-container"  onclick="highlightImage(this)">
+            <img class="J" src="Images2/008.png" alt="Image 8" />
+          </div>
+          <div class="image-container"  onclick="highlightImage(this)">
+            <img class="T" src="Images2/009.png" alt="Image 9" />
+          </div>
+        </div>
+  
+        <div class="image-row" id="imageRow24" style="display: none;">
+          <div class="image-container"  onclick="highlightImage(this)">
+            <img class="T" src="Images2/010.png" alt="Image 10" />
+          </div>
+          <div class="image-container"  onclick="highlightImage(this)">
+            <img class="N" src="Images2/011.png" alt="Image 11" />
+          </div>
+          <div class="image-container"  onclick="highlightImage(this)">
+            <img class="N" src="Images2/012.png" alt="Image 12" />
+          </div>
+        </div>
+        
+  
+        <!-- Next Button -->
+        <button id="backButton2" onclick="showPrevRow2()" style="display: none;">Retour</button>
+        <button id="nextButton2" onclick="showNextRow2()">Suivant</button>
+        
+      </div>
+
+
+      <div id="surveyContainer3" style="display: none;">
+        <h2>Choisissez l'enfant qui ressent la même chose que l'enfant en haut:</h2>
+  
+        <div id = "imageHaut31">
+          <img src="Images3/001.png" alt="Image 1" />
+        </div>
+        <div id = "imageHaut32" style="display: none;">
+          <img src="Images3/006.png" alt="Image 6" />
+        </div>
+        <div id = "imageHaut33" style="display: none;">
+          <img src="Images3/011.png" alt="Image 11" />
+        </div>
+        <div id = "imageHaut34" style="display: none;">
+          <img src="Images3/016.png" alt="Image 16" />
+        </div>
+        <div id = "imageHaut35" style="display: none;">
+          <img src="Images3/021.png" alt="Image 21" />
+        </div>
+        <div id = "imageHaut36" style="display: none;">
+          <img src="Images3/026.png" alt="Image 21" />
+        </div>
+        <div id = "imageHaut37" style="display: none;">
+          <img src="Images3/031.png" alt="Image 21" />
+        </div>
+        <div id = "imageHaut38" style="display: none;">
+          <img src="Images3/036.png" alt="Image 21" />
+        </div>
+        <div id = "imageHaut39" style="display: none;">
+          <img src="Images3/041.png" alt="Image 21" />
+        </div>
+  
+  
+        <div class="image-row" id="imageRow31">
+          <!--<div class="image-container" id="img1">
+            <img src="Images/1.png" alt="Image 1" />
+          </div>-->
+          <div class="image-container" id="img2" onclick="highlightImage(this)">
+            <img class="J" src="Images3/002.png" alt="Image 2" />
+          </div>
+          <div class="image-container" id="img3" onclick="highlightImage(this)">
+            <img class="P" src="Images3/003.png" alt="Image 3" />
+          </div>
+          <div class="image-container" id="img4" onclick="highlightImage(this)">
+            <img class="P" src="Images3/004.png" alt="Image 4" />
+          </div>
+          <div class="image-container" id="img5" onclick="highlightImage(this)">
+            <img class="C" src="Images3/005.png" alt="Image 5" />
+          </div>
+        </div>
+  
+        <div class="image-row" id="imageRow32" style="display: none;">
+          <div class="image-container" id="img7" onclick="highlightImage(this)">
+            <img class="J" src="Images3/007.png" alt="Image 7" />
+          </div>
+          <div class="image-container" id="img8" onclick="highlightImage(this)">
+            <img class="N" src="Images3/008.png" alt="Image 8" />
+          </div>
+          <div class="image-container" id="img9" onclick="highlightImage(this)">
+            <img class="T" src="Images3/009.png" alt="Image 9" />
+          </div>
+          <div class="image-container" id="img10" onclick="highlightImage(this)">
+            <img class="P" src="Images3/010.png" alt="Image 10" />
+          </div>
+        </div>
+  
+      <div class="image-row" id="imageRow33" style="display: none;">
+        <div class="image-container" id="img12" onclick="highlightImage(this)">
+          <img class="T" src="Images3/012.png" alt="Image 12" />
+        </div>
+        <div class="image-container" id="img13" onclick="highlightImage(this)">
+          <img class="P" src="Images3/013.png" alt="Image 13" />
+        </div>
+        <div class="image-container" id="img14" onclick="highlightImage(this)">
+          <img class="C" src="Images3/014.png" alt="Image 14" />
+        </div>
+        <div class="image-container" id="img15" onclick="highlightImage(this)">
+          <img class="N" src="Images3/015.png" alt="Image 15" />
+        </div>
+      </div>
+  
+      <div class="image-row" id="imageRow34" style="display: none;">
+        <div class="image-container" id="img17" onclick="highlightImage(this)">
+          <img class="T" src="Images3/017.png" alt="Image 17" />
+        </div>
+        <div class="image-container" id="img18" onclick="highlightImage(this)">
+          <img class="P" src="Images3/018.png" alt="Image 18" />
+        </div>
+        <div class="image-container" id="img19" onclick="highlightImage(this)">
+          <img class="D" src="Images3/019.png" alt="Image 19" />
+        </div>
+        <div class="image-container" id="img20" onclick="highlightImage(this)">
+          <img class="C" src="Images3/020.png" alt="Image 20" />
+        </div>
+      </div>
+  
+      <div class="image-row" id="imageRow35" style="display: none;">
+        <div class="image-container" id="img22" onclick="highlightImage(this)">
+          <img class="C" src="Images3/022.png" alt="Image 22" />
+        </div>
+        <div class="image-container" id="img23" onclick="highlightImage(this)">
+          <img class="N" src="Images3/023.png" alt="Image 23" />
+        </div>
+        <div class="image-container" id="img24" onclick="highlightImage(this)">
+          <img class="P" src="Images3/024.png" alt="Image 24" />
+        </div>
+        <div class="image-container" id="img25" onclick="highlightImage(this)">
+          <img class="D" src="Images3/025.png" alt="Image 25" />
+        </div>
+      </div>
+  
+      <div class="image-row" id="imageRow36" style="display: none;">
+        <div class="image-container" id="img27" onclick="highlightImage(this)">
+            <img class="J" src="Images3/027.png" alt="Image 27" />
+        </div>
+        <div class="image-container" id="img28" onclick="highlightImage(this)">
+            <img class="N" src="Images3/028.png" alt="Image 28" />
+        </div>
+        <div class="image-container" id="img29" onclick="highlightImage(this)">
+            <img class="D" src="Images3/029.png" alt="Image 29" />
+        </div>
+        <div class="image-container" id="img30" onclick="highlightImage(this)">
+            <img class="P" src="Images3/030.png" alt="Image 30" />
+        </div>
+    </div>
+  
+    <div class="image-row" id="imageRow37" style="display: none;">
+      <div class="image-container" id="img32" onclick="highlightImage(this)">
+          <img class="C" src="Images3/032.png" alt="Image 32" />
+      </div>
+      <div class="image-container" id="img33" onclick="highlightImage(this)">
+          <img class="T" src="Images3/033.png" alt="Image 33" />
+      </div>
+      <div class="image-container" id="img34" onclick="highlightImage(this)">
+          <img class="T" src="Images3/034.png" alt="Image 34" />
+      </div>
+      <div class="image-container" id="img35" onclick="highlightImage(this)">
+          <img class="P" src="Images3/035.png" alt="Image 35" />
+      </div>
+    </div>
+  
+    <div class="image-row" id="imageRow38" style="display: none;">
+      <div class="image-container" id="img37" onclick="highlightImage(this)">
+          <img class="J" src="Images3/037.png" alt="Image 37" />
+      </div>
+      <div class="image-container" id="img38" onclick="highlightImage(this)">
+          <img class="C" src="Images3/038.png" alt="Image 38" />
+      </div>
+      <div class="image-container" id="img39" onclick="highlightImage(this)">
+          <img class="D" src="Images3/039.png" alt="Image 39" />
+      </div>
+      <div class="image-container" id="img40" onclick="highlightImage(this)">
+          <img class="N" src="Images3/040.png" alt="Image 40" />
+      </div>
+  </div>
+  
+  <div class="image-row" id="imageRow39" style="display: none;">
+    <div class="image-container" id="img42" onclick="highlightImage(this)">
+        <img class="T" src="Images3/042.png" alt="Image 42" />
+    </div>
+    <div class="image-container" id="img43" onclick="highlightImage(this)">
+        <img class="C" src="Images3/043.png" alt="Image 43" />
+    </div>
+    <div class="image-container" id="img44" onclick="highlightImage(this)">
+        <img class="N" src="Images3/044.png" alt="Image 44" />
+    </div>
+    <div class="image-container" id="img45" onclick="highlightImage(this)">
+        <img class="D" src="Images3/045.png" alt="Image 45" />
+    </div>
+  </div>
+  
+      <!-- Next Button -->
+        <button id="backButton3" onclick="showPrevRow3()" style="display: none;">Retour</button>
+        <button id="nextButton3" onclick="showNextRow3()">Suivant</button>
+    </div>
+
+
+    <div id="surveyContainer4" style="display: none;">
+        <h2>Choisissez les deux enfants qui ont l'air de ressentir la même chose:</h2>
+  
+        <div class="image-row" id="imageRow41">
+          <div class="image-container" onclick="highlightImage(this)">
+              <img class="T" src="Images4/001.png" alt="Image 1" />
+          </div>
+          <div class="image-container"  onclick="highlightImage(this)">
+              <img class="T" src="Images4/002.png" alt="Image 2" />
+          </div>
+          <div class="image-container"  onclick="highlightImage(this)">
+              <img class="D" src="Images4/003.png" alt="Image 3" />
+          </div>
+          <div class="image-container"  onclick="highlightImage(this)">
+              <img class="N" src="Images4/004.png" alt="Image 4" />
+          </div>
+      </div>
+  
+      <div class="image-row" id="imageRow42" style="display: none;">
+        <div class="image-container" onclick="highlightImage(this)">
+            <img class="P" src="Images4/005.png" alt="Image 5" />
+        </div>
+        <div class="image-container"  onclick="highlightImage(this)">
+            <img class="D" src="Images4/006.png" alt="Image 6" />
+        </div>
+        <div class="image-container"  onclick="highlightImage(this)">
+            <img class="C" src="Images4/007.png" alt="Image 7" />
+        </div>
+        <div class="image-container"  onclick="highlightImage(this)">
+            <img class="D" src="Images4/008.png" alt="Image 8" />
+        </div>
+    </div>
+  
+    <div class="image-row" id="imageRow43" style="display: none;">
+      <div class="image-container" onclick="highlightImage(this)">
+          <img class="N" src="Images4/009.png" alt="Image 9" />
+      </div>
+      <div class="image-container" onclick="highlightImage(this)">
+          <img class="C" src="Images4/010.png" alt="Image 10" />
+      </div>
+      <div class="image-container" onclick="highlightImage(this)">
+          <img class="N" src="Images4/011.png" alt="Image 11" />
+      </div>
+      <div class="image-container" onclick="highlightImage(this)">
+          <img class="T" src="Images4/012.png" alt="Image 12" />
+      </div>
+  </div>
+  
+  <div class="image-row" id="imageRow44" style="display: none;">
+    <div class="image-container" onclick="highlightImage(this)">
+        <img class="T" src="Images4/013.png" alt="Image 13" />
+    </div>
+    <div class="image-container" onclick="highlightImage(this)">
+        <img class="N" src="Images4/014.png" alt="Image 14" />
+    </div>
+    <div class="image-container" onclick="highlightImage(this)">
+        <img class="C" src="Images4/015.png" alt="Image 15" />
+    </div>
+    <div class="image-container" onclick="highlightImage(this)">
+        <img class="C" src="Images4/016.png" alt="Image 16" />
+    </div>
+  </div>
+        
+  
+        <!-- Next Button -->
+        <button id="backButton4" onclick="showPrevRow4()" style="display: none;">Retour</button>
+        <button id="nextButton4" onclick="showNextRow4()">Suivant</button>
+        
+      </div>
+
+      <div id="surveyContainer5" style="display: none;">
+        <h2 id="intro">En cette expérience, vous allez observer une image d'enfant pendant 5 secondes, 
+          puis vous devrez choisir les deux images qui ressemblent le plus à l'image affichée précédemment.</h2>
+        <h2 style="display: none;" id="noNext">Regardez bien sur cette image </h2>
+        <h2 style="display: none;" id="withNext">Choisissez les deux enfants qui ressent la même chose que le premier enfant :</h2>
+  
+        <div id = "imageHaut51" style="display: none;">
+          <img src="Images5/1.png" alt="Image 1" />
+        </div>
+        <div id = "imageHaut52" style="display: none;">
+          <img src="Images5/3.png" alt="Image 6" />
+        </div>
+        <div id = "imageHaut53" style="display: none;">
+          <img src="Images5/5.png" alt="Image 11" />
+        </div>
+        <div id = "imageHaut54" style="display: none;">
+          <img src="Images5/7.png" alt="Image 16" />
+        </div>
+        <div id = "imageHaut55" style="display: none;">
+          <img src="Images5/9.png" alt="Image 21" />
+        </div>
+        <div id = "imageHaut56" style="display: none;">
+          <img src="Images5/11.png" alt="Image 21" />
+        </div>
+        <div id = "imageHaut57" style="display: none;">
+          <img src="Images5/13.png" alt="Image 21" />
+        </div>
+        <div id = "imageHaut58" style="display: none;">
+          <img src="Images5/15.png" alt="Image 21" />
+        </div>
+        <div id = "imageHaut59" style="display: none;">
+          <img src="Images5/17.png" alt="Image 21" />
+        </div>
+        <div id = "imageHaut510" style="display: none;">
+          <img src="Images5/19.png" alt="Image 21" />
+        </div>
+  
+  
+        <div class="image-row" id="imageRow51" style="display: none;">
+          <div class="image-container" onclick="highlightImage(this)">
+              <img class="N" src="Images5/2-1.png" alt="Image 21" />
+          </div>
+          <div class="image-container" onclick="highlightImage(this)">
+              <img class="P" src="Images5/2-2.png" alt="Image 22" />
+          </div>
+          <div class="image-container" onclick="highlightImage(this)">
+              <img class="T" src="Images5/2-3.png" alt="Image 23" />
+          </div>
+          <div class="image-container" onclick="highlightImage(this)">
+              <img class="T" src="Images5/2-4.png" alt="Image 24" />
+          </div>
+          <div class="image-container" onclick="highlightImage(this)">
+              <img class="J" src="Images5/2-5.png" alt="Image 25" />
+          </div>
+          <div class="image-container" onclick="highlightImage(this)">
+              <img class="J" src="Images5/2-6.png" alt="Image 26" />
+          </div>
+      </div>
+  
+      <div class="image-row" id="imageRow52" style="display: none;">
+        <div class="image-container" onclick="highlightImage(this)">
+            <img class="N" src="Images5/4-1.png" alt="Image 41" />
+        </div>
+        <div class="image-container" onclick="highlightImage(this)">
+            <img class="P" src="Images5/4-2.png" alt="Image 42" />
+        </div>
+        <div class="image-container" onclick="highlightImage(this)">
+            <img class="J" src="Images5/4-3.png" alt="Image 43" />
+        </div>
+        <div class="image-container" onclick="highlightImage(this)">
+            <img class="N" src="Images5/4-4.png" alt="Image 44" />
+        </div>
+        <div class="image-container" onclick="highlightImage(this)">
+            <img class="P" src="Images5/4-5.png" alt="Image 45" />
+        </div>
+        <div class="image-container" onclick="highlightImage(this)">
+            <img class="D" src="Images5/4-6.png" alt="Image 46" />
+        </div>
+    </div>
+  
+    <div class="image-row" id="imageRow53" style="display: none;">
+      <div class="image-container" onclick="highlightImage(this)">
+          <img class="J" src="Images5/6-1.png" alt="Image 61" />
+      </div>
+      <div class="image-container" onclick="highlightImage(this)">
+          <img class="J" src="Images5/6-2.png" alt="Image 62" />
+      </div>
+      <div class="image-container" onclick="highlightImage(this)">
+          <img class="P" src="Images5/6-3.png" alt="Image 63" />
+      </div>
+      <div class="image-container" onclick="highlightImage(this)">
+          <img class="C" src="Images5/6-4.png" alt="Image 64" />
+      </div>
+      <div class="image-container" onclick="highlightImage(this)">
+          <img class="N" src="Images5/6-5.png" alt="Image 65" />
+      </div>
+      <div class="image-container" onclick="highlightImage(this)">
+          <img class="P" src="Images5/6-6.png" alt="Image 66" />
+      </div>
+  </div>
+  
+  <div class="image-row" id="imageRow54" style="display: none;">
+    <div class="image-container" onclick="highlightImage(this)">
+        <img class="J" src="Images5/8-1.png" alt="Image 81" />
+    </div>
+    <div class="image-container" onclick="highlightImage(this)">
+        <img class="P" src="Images5/8-2.png" alt="Image 82" />
+    </div>
+    <div class="image-container" onclick="highlightImage(this)">
+        <img class="D" src="Images5/8-3.png" alt="Image 83" />
+    </div>
+    <div class="image-container" onclick="highlightImage(this)">
+        <img class="C" src="Images5/8-4.png" alt="Image 84" />
+    </div>
+    <div class="image-container" onclick="highlightImage(this)">
+        <img class="T" src="Images5/8-5.png" alt="Image 85" />
+    </div>
+    <div class="image-container" onclick="highlightImage(this)">
+        <img class="C" src="Images5/8-6.png" alt="Image 86" />
+    </div>
+</div>
+  
+<div class="image-row" id="imageRow55" style="display: none;">
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="J" src="Images5/10-1.png" alt="Image 101" />
+  </div>
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="T" src="Images5/10-2.png" alt="Image 102" />
+  </div>
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="P" src="Images5/10-3.png" alt="Image 103" />
+  </div>
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="P" src="Images5/10-4.png" alt="Image 104" />
+  </div>
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="C" src="Images5/10-5.png" alt="Image 105" />
+  </div>
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="J" src="Images5/10-6.png" alt="Image 106" />
+  </div>
+</div>
+  
+<div class="image-row" id="imageRow56" style="display: none;">
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="N" src="Images5/12-1.png" alt="Image 121" />
+  </div>
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="D" src="Images5/12-2.png" alt="Image 122" />
+  </div>
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="C" src="Images5/12-3.png" alt="Image 123" />
+  </div>
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="D" src="Images5/12-4.png" alt="Image 124" />
+  </div>
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="C" src="Images5/12-5.png" alt="Image 125" />
+  </div>
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="T" src="Images5/12-6.png" alt="Image 126" />
+  </div>
+</div>
+  
+<div class="image-row" id="imageRow57" style="display: none;">
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="C" src="Images5/14-1.png" alt="Image 141" />
+  </div>
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="T" src="Images5/14-2.png" alt="Image 142" />
+  </div>
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="N" src="Images5/14-3.png" alt="Image 143" />
+  </div>
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="P" src="Images5/14-4.png" alt="Image 144" />
+  </div>
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="N" src="Images5/14-5.png" alt="Image 145" />
+  </div>
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="D" src="Images5/14-6.png" alt="Image 146" />
+  </div>
+</div>
+  
+<div class="image-row" id="imageRow58" style="display: none;">
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="D" src="Images5/16-1.png" alt="Image 161" />
+  </div>
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="P" src="Images5/16-2.png" alt="Image 162" />
+  </div>
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="N" src="Images5/16-3.png" alt="Image 163" />
+  </div>
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="C" src="Images5/16-4.png" alt="Image 164" />
+  </div>
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="C" src="Images5/16-5.png" alt="Image 165" />
+  </div>
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="D" src="Images5/16-6.png" alt="Image 166" />
+  </div>
+</div>
+  
+<div class="image-row" id="imageRow59" style="display: none;">
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="N" src="Images5/18-1.png" alt="Image 181" />
+  </div>
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="C" src="Images5/18-2.png" alt="Image 182" />
+  </div>
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="N" src="Images5/18-3.png" alt="Image 183" />
+  </div>
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="P" src="Images5/18-4.png" alt="Image 184" />
+  </div>
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="T" src="Images5/18-5.png" alt="Image 185" />
+  </div>
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="D" src="Images5/18-6.png" alt="Image 186" />
+  </div>
+</div>
+  
+<div class="image-row" id="imageRow510" style="display: none;">
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="T" src="Images5/20-1.png" alt="Image 201" />
+  </div>
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="T" src="Images5/20-2.png" alt="Image 202" />
+  </div>
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="N" src="Images5/20-3.png" alt="Image 203" />
+  </div>
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="P" src="Images5/20-4.png" alt="Image 204" />
+  </div>
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="D" src="Images5/20-5.png" alt="Image 205" />
+  </div>
+  <div class="image-container" onclick="highlightImage(this)">
+      <img class="C" src="Images5/20-6.png" alt="Image 206" />
+  </div>
+</div>
+  
+        
+  
+      <!-- Next Button -->
+        <button id="startButton" onclick="start()">Commence</button>
+        <button id="montreButton" onclick="montre()" style="display: none;">Montre-moi encore</button>
+        <button id="backButton5" onclick="showPrevRow()" style="display: none;">Retour</button>
+        <button id="nextButton5" onclick="showNextRow()" style="display: none;">Suivant</button>
         
     </div>
 
-    <div id="tableContainer"></div>
+
+    <div id="stopD">
+      <button id="stopB" onclick="stop()">Stop</button>
+    </div>
+
+    <div id="buttonTest">
+      <button class="change" onclick="firstFn()">Premier Test</button>
+      <button class="change" onclick="secondFn()">Deuxième Test</button>
+      <button class="change" onclick="thirdFn()">Troisième Test</button>
+      <button class="change" onclick="fourthFn()">Quatrième Test</button>
+      <button class="change" onclick="fifthFn()">Cinquième Test</button>
+
+    </div>
+
+
     
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

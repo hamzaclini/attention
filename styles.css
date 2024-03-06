@@ -1,77 +1,225 @@
-table {
-    border-collapse: collapse;
-    width: 100%; /* Adjust width as needed */
-    margin: auto;
-    
-}
-
-th, td {
-    border: 1px solid black; /* Add border to separate cells */
-    padding: 8px; /* Add padding for better spacing */
-    text-align: center; /* Center align text */
-}
-
-input[type="checkbox"] {
-    display: block;
-    margin: auto; /* Center checkboxes */
-}
-
-/*input[type="checkbox"]:checked {
-    pointer-events: none; /* Disable checkbox once checked 
-} */
-
-.wrapper {
-    display: flex;
-    margin: auto;
-    /*align-items: center; /* Align items vertically */
-}
-
-/*.container {
-    flex: 1;
-    margin-right: 10px; /* Add margin to separate from the timer */
-    /*padding: 10px; /* Add padding to container */
-
-
-#timer {
-    /* width: 50;  Adjust width as needed */
+#content {
+    margin-top: 10%;
     text-align: center;
-    padding: 10px;
-    font-size: 48px; /* Adjust the font size as needed */
-    color: blue;
-    margin: auto;
 }
 
-button{
-    margin-top: 30px;
-    margin-left: 50px;
-    width: 120px; 
-    padding: 8px; 
-}
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
 
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
 
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
 
-.form-container{
-    margin-top: 30px;
-    margin-left: 20px;
-}
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  #surveyContainer1 .image-row {
+    display: flex;
+    align-items: center;
+    margin-left: 30%;
+    margin-right: 30%;
+  }
+  
+  #surveyContainer1 .image-container {
+    /*margin-right: 10px;*/
+    margin-left: 0%;
+    margin-right: 0%;
+    display: inline-block;
+    text-align: center;
+    /*margin: 10px;*/
+    cursor: pointer;
+    margin-top: 5%;
+  }
+  
+  #surveyContainer1 img {
+    max-width: 70%;
+    height: auto;
+  }
+  
+  
+  
+  #surveyContainer1 .reponse-row {
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
 
-.input-group{
-    margin-top: 20px;
+  #surveyContainer2 .highlighted {
+    position: relative;
+  }
+  
+  #surveyContainer2 .highlighted::before {
+    content: '\2713'; /* Unicode checkmark character */
+    position: absolute;
+    bottom: -30px;
+    left: -30px;
+    font-size: 50px; /* Adjust the font size as needed */
+    color: green; /* Adjust the color as needed */
+  }
+
+  #surveyContainer2 .image-row {
+    display: flex;
+    align-items: center;
     margin-bottom: 20px;
-}
+    margin-left: 35%;
+    margin-right: 35%;
+  }
 
-.disabledBtn {
-    pointer-events: none;
-    opacity: 0.5;
-}
+  #surveyContainer2 .image-container {
+    /*margin-right: 10px;*/
+  margin-left: 0%;
+  margin-right: 5%;
+  display: inline-block;
+  text-align: center;
+  /*margin: 10px;*/
+  cursor: pointer;
+  margin-top: 5%;
+  }
 
-.disabledCheckbox {
-    pointer-events: none; /* Disable pointer events */
-    opacity: 0.5;
-}
+  #surveysurveyContainer2 img{
+    max-width: 100%;
+  height: auto;
+  }
 
-.text {
-    font-size: 18px;
-    margin-left: 50px;
-    margin-top: 20px;
-}
+
+  #surveyContainer3 .highlighted {
+    position: relative;
+  }
+  
+  #surveyContainer3 .highlighted::before {
+    content: '\2713'; /* Unicode checkmark character */
+  position: absolute;
+  bottom: -20px;
+  left: 0px;
+  font-size: 50px; /* Adjust the font size as needed */
+  color: green; /* Adjust the color as needed */
+  }
+
+  #surveyContainer3 .image-row {
+    display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-left: 27%;
+  margin-right: 20%;
+  }
+
+  #surveyContainer3 .image-container {
+    /*margin-right: 10px;*/
+  margin-left: 0%;
+  margin-right: 5%;
+  display: inline-block;
+  text-align: center;
+  /*margin: 10px;*/
+  cursor: pointer;
+  margin-top: 5%;
+  }
+
+  #surveysurveyContainer3 img{
+    max-width: 100%;
+  height: auto;
+  }
+
+  #surveyContainer4 .highlighted {
+    position: relative;
+    
+  }
+  
+  #surveyContainer4 .highlighted::before {
+    content: '\2713'; /* Unicode checkmark character */
+  position: absolute;
+  bottom: -20px;
+  left: 0px;
+  font-size: 50px; /* Adjust the font size as needed */
+  color: green; /* Adjust the color as needed */
+    
+  }
+
+  #surveyContainer4 .image-row {
+    display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-left: 27%;
+  margin-right: 20%;
+    
+  }
+
+  #surveyContainer4 .image-container {
+    /*margin-right: 10px;*/
+  margin-left: 3%;
+  margin-right: 3%;
+  display: inline-block;
+  text-align: center;
+  /*margin: 10px;*/
+  cursor: pointer;
+  margin-top: 7%;
+  margin-bottom: 5%;
+   
+  }
+
+  #surveysurveyContainer4 img{
+    max-width: 100%;
+  height: auto;
+   
+  }
+
+  #surveyContainer5 .highlighted {
+    position: relative;
+    
+  }
+  
+  #surveyContainer5 .highlighted::before {
+    content: '\2713'; /* Unicode checkmark character */
+position: absolute;
+bottom: -20px;
+left: 0px;
+font-size: 50px; /* Adjust the font size as needed */
+color: green; /* Adjust the color as needed */
+    
+  }
+
+  #surveyContainer5 .image-row {
+    display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-left: 10%;
+  margin-right: 10%;
+    
+  }
+
+  #surveyContainer5 .image-container {
+    /*margin-right: 10px;*/
+  margin-left: 3%;
+  margin-right: 3%;
+  display: inline-block;
+  text-align: center;
+  /*margin: 10px;*/
+  cursor: pointer;
+   
+  }
+
+  #surveysurveyContainer5 img{
+    max-width: 100%;
+    height: auto;
+   
+  }
+
+  #stopD{
+    margin-top: 2%;
+  }
+
+  #buttonTest{
+    margin-top: 2%;
+  }
+
+  #buttonTest button{
+    margin-left: 2%;
+  }
