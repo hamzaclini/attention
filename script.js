@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
           let tableHTML = calculateConfusionMatrix();
           document.getElementById('confusionMatrixTable').innerHTML = tableHTML ;
           document.getElementById('confusionMatrixTable').style.display = 'block';
+          save_csv();
         }
 
 
@@ -62,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
           let tableHTML = calculateConfusionMatrix();
           document.getElementById('confusionMatrixTable').innerHTML = tableHTML ;
           document.getElementById('confusionMatrixTable').style.display = 'block';
+          save_csv();
 
     }
 
@@ -1046,6 +1048,26 @@ buttons.forEach(button => {
     const lighterHex = "#" + ((1 << 24) + (red << 16) + (green << 8) + blue).toString(16).toUpperCase().slice(1);
 
     return lighterHex;
+}
+
+function save_csv(){
+  actual.unshift("label");
+  responses.unshift("response")
+  const data = [actual.flat(Infinity), responses.flat(Infinity)];
+  function transpose(array) {
+    return array[0].map((_, colIndex) => array.map(row => row[colIndex]));
+  }
+  const transposedData = transpose(data);
+  const csvData = transposedData.map(row => row.join(';')).join('\n');
+  const blob = new Blob([csvData], { type: 'text/csv;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'emotion_data.csv';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  //window.close(); 
 }
 
    
