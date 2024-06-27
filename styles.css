@@ -1,47 +1,23 @@
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
+#canvas1 {
+    border: 5px solid black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+
 }
 
-.container {
-  display: flex;
-  margin: 20px;
+.controls {
+    position: absolute;
+    z-index: 10;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-#output {
-  font-size: 24px;
-}
+.controls, select, option {
+    font-size: 25 px;
 
-.right {
-  color: green;
-}
-
-.wrong {
-  color: red;
-}
-
-.repeated {
-  color: blue;
-}
-
-#say {
-  margin-right: 10px;
-  font-size: 24px;
-}
-
-label {
-  font-size: 24px;
-}
-
-#timer {
-  /* width: 50;  Adjust width as needed */
-  text-align: center;
-  padding: 10px;
-  font-size: 48px; /* Adjust the font size as needed */
-  color: violet;
-  margin: auto;
 }
